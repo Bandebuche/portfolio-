@@ -152,7 +152,7 @@ export default function AdminPage() {
                 autoComplete="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="Enter username (e.g. Sachin)"
+                placeholder="Enter username"
                 className="w-full rounded-xl border border-zinc-800 bg-zinc-950/80 px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:border-zinc-700 focus:outline-none focus:ring-1 focus:ring-zinc-700 transition-all"
               />
             </div>
@@ -203,11 +203,6 @@ export default function AdminPage() {
               {loading ? "Verifying Access..." : "Authenticate & Continue"}
             </button>
           </form>
-
-          <div className="mt-6 pt-5 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-500">
-            <span>Default Demo Login:</span>
-            <span className="font-mono text-zinc-400">Sachin / Sachin@2026</span>
-          </div>
         </div>
       </div>
     </div>
