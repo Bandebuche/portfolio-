@@ -2,8 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { LockIcon } from "./Icons";
 import { Profile } from "@/types/portfolio";
 
 interface FooterProps {
@@ -71,16 +69,6 @@ export function Footer({ profile }: FooterProps) {
           >
             WhatsApp
           </a>
-          <span>•</span>
-          {/* Discreet Admin Portal Link */}
-          <Link
-            href="/admin"
-            className="inline-flex items-center gap-1 text-zinc-400 dark:text-zinc-600 transition-colors hover:text-zinc-700 dark:hover:text-zinc-400"
-            title="Administrator Portal"
-          >
-            <LockIcon className="w-3 h-3" />
-            <span className="text-[11px]">Admin</span>
-          </Link>
         </div>
       </div>
     </footer>
