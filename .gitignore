@@ -26,7 +26,16 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env*
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# legacy backups & screenshots
+screenshot_*.png
+legacy_vite_backup/
+app.js
+index.html
+style.css
+test_app.js

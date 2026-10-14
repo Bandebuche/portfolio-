@@ -64,7 +64,7 @@ export function FloatingDock({ socials }: FloatingDockProps) {
   ];
 
   return (
-    <aside aria-label="Quick social connections" className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
+    <aside aria-label="Quick social connections" className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom,0px))] left-1/2 -translate-x-1/2 z-40">
       <motion.nav
         aria-label="Floating social dock"
         initial={{ y: 50, opacity: 0 }}

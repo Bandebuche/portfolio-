@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">WebTree</string>
+    <string name="title_activity_main">WebTree</string>
+    <string name="package_name">com.webtree.portfolio</string>
+    <string name="custom_url_scheme">com.webtree.portfolio</string>
+</resources>

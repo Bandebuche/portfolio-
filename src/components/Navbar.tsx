@@ -14,7 +14,7 @@ interface NavbarProps {
 
 export function Navbar({ profile }: NavbarProps) {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl transition-colors">
+    <header className="sticky top-0 z-40 w-full pt-safe border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl transition-colors">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         {/* Brand / WebTree Logo + Name */}
         <Link
