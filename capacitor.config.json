@@ -1,0 +1,10 @@
+{
+  "appId": "com.webtree.portfolio",
+  "appName": "WebTree",
+  "webDir": "out",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "backgroundColor": "#09090b"
+}

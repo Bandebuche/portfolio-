@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: Setup Java 21
@@ -39,9 +39,7 @@ jobs:
         run: npm run build
 
       - name: Copy & Sync Capacitor Android
-        run: |
-          npx cap copy android
-          npx cap update android
+        run: npx cap sync android
 
       - name: Build Debug APK with Gradle
         run: |
