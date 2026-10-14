@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description:
       "Intelligent AI web applications, real-time analytics dashboards, and high-performance digital products that scale businesses.",
     url: "https://webtree-portfolio.vercel.app",
-    siteName: "Weblink — Sachin Bandebuche",
+    siteName: "Webtree — Sachin Bandebuche",
     locale: "en_US",
     type: "website",
     images: [
@@ -50,13 +50,13 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1024,
         height: 1024,
-        alt: "Weblink Portfolio Logo",
+        alt: "Webtree Portfolio Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sachin Bandebuche — Weblink Portfolio",
+    title: "Sachin Bandebuche — Webtree Portfolio",
     description:
       "SaaS systems, Next.js web applications, headless commerce, and client platforms.",
     images: ["/logo.png"],
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Weblink",
+    title: "Webtree",
   },
 };
 

@@ -34,7 +34,7 @@ export function Navbar({ profile }: NavbarProps) {
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
               <span className="text-sm sm:text-base font-extrabold tracking-tight text-zinc-900 dark:text-white">
-                web<span className="text-cyan-500 dark:text-cyan-400">link</span>
+                web<span className="text-cyan-500 dark:text-cyan-400">tree</span>
               </span>
               <span className="hidden sm:inline-block h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
               <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 hidden sm:inline tracking-tight">

@@ -119,7 +119,7 @@ export default function AdminPage() {
             <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-cyan-500/40 bg-zinc-950 shadow-[0_0_20px_-3px_rgba(6,182,212,0.45)] mb-3">
               <Image
                 src="/logo.png"
-                alt="Weblink Logo"
+                alt="Webtree Logo"
                 fill
                 sizes="56px"
                 priority
@@ -127,7 +127,7 @@ export default function AdminPage() {
               />
             </div>
             <span className="text-[10px] font-semibold tracking-wider text-cyan-400 uppercase">
-              Weblink Admin
+              Webtree Admin
             </span>
             <h1 className="text-xl font-bold tracking-tight text-white mt-1">
               Control Center Authentication
