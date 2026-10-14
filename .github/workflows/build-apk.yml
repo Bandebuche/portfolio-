@@ -9,6 +9,8 @@ jobs:
   build:
     name: Build Android Debug APK
     runs-on: ubuntu-latest
+    env:
+      ANDROID_HOME: /usr/local/lib/android/sdk
 
     steps:
       - name: Checkout Repository
@@ -27,21 +29,19 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
+      - name: Make Gradle executable
+        run: chmod +x android/gradlew
+
       - name: Install Node Dependencies
         run: npm ci
 
       - name: Build Web Application
         run: npm run build
 
-      - name: Sync Capacitor Android
+      - name: Copy & Sync Capacitor Android
         run: npx cap sync android
 
-      - name: Make Gradle executable
-        run: chmod +x android/gradlew
-
       - name: Build Debug APK with Gradle
-        env:
-          ANDROID_HOME: /usr/local/lib/android/sdk
         run: |
           cd android
           ./gradlew assembleDebug --no-daemon --stacktrace
