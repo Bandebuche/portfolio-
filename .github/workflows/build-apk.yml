@@ -51,25 +51,25 @@ jobs:
 
       - name: Prepare APK File
         run: |
-          cp android/app/build/outputs/apk/debug/app-debug.apk WebTree.apk
+          cp android/app/build/outputs/apk/debug/app-debug.apk Weblink.apk
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: WebTree-Android-Debug-APK
-          path: WebTree.apk
+          name: Weblink-Android-Debug-APK
+          path: Weblink.apk
           if-no-files-found: error
 
       - name: Publish Direct APK to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
-          name: "WebTree Android App (Direct APK)"
+          name: "Weblink Android App (Direct APK)"
           body: |
-            ### 📱 WebTree Mobile Android APK
-            - **App Name:** WebTree
+            ### 📱 Weblink Mobile Android APK
+            - **App Name:** Weblink
             - **Format:** Direct Android APK (`.apk`)
             - **Installation:** Download and tap to install directly on Android.
-          files: WebTree.apk
+          files: Weblink.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
