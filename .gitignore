@@ -39,3 +39,6 @@ app.js
 index.html
 style.css
 test_app.js
+
+.vercel
+.env*
