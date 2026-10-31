@@ -1,7 +1,7 @@
 import { Project } from "@/types/portfolio";
 import { DEFAULT_PROJECTS } from "@/data/projects";
 
-const STORAGE_KEY = "webtree_projects_v5";
+const STORAGE_KEY = "webtree_projects_v6";
 const AUTH_KEY = "webtree_admin_session_v2";
 const PASS_KEY = "webtree_admin_password_v2";
 

@@ -156,12 +156,12 @@ export function HeroSection({ profile }: HeroSectionProps) {
           {/* Minimal Metric Badges */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-500 dark:text-zinc-500">
             <div className="flex items-center gap-1.5">
-              <span className="font-semibold text-zinc-800 dark:text-zinc-300">25+</span>
+              <span className="font-semibold text-zinc-800 dark:text-zinc-300">{profile.metrics.shipped}</span>
               <span>Websites Shipped</span>
             </div>
             <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
             <div className="flex items-center gap-1.5">
-              <span className="font-semibold text-zinc-800 dark:text-zinc-300">5+</span>
+              <span className="font-semibold text-zinc-800 dark:text-zinc-300">{profile.metrics.saas}</span>
               <span>SaaS Systems</span>
             </div>
             <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />

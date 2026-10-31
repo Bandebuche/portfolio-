@@ -23,8 +23,8 @@ export const DEFAULT_PROFILE: Profile = {
     "Shopify/WordPress"
   ],
   metrics: {
-    shipped: "25+",
-    saas: "5+",
+    shipped: "30+",
+    saas: "8+",
     satisfaction: "100%",
     location: "Nagpur, IN"
   },

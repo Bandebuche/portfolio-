@@ -2,6 +2,71 @@ import { Project } from "@/types/portfolio";
 
 export const DEFAULT_PROJECTS: Project[] = [
   {
+    id: "site-digital-azadi-admin",
+    name: "DA Support Admin Console",
+    title: "DA Support Ops & SLA Deck",
+    url: "https://digital-azadi-support.vercel.app/admin",
+    description: "Super-admin operations console featuring real-time ticket triage, Kanban queues, SLA analytics deck, and multi-agent dispatch.",
+    category: "Dashboards",
+    status: "Live",
+    featured: true,
+    tags: ["Admin Console", "Kanban Queue", "SLA Analytics", "Real-Time Telemetry"],
+    customThumb: "https://digital-azadi-support.vercel.app/digital-azadi-logo.png",
+    clicks: 1890
+  },
+  {
+    id: "site-digital-azadi-support",
+    name: "Digital Azadi Support Desk",
+    title: "Digital Azadi Support Portal",
+    url: "https://digital-azadi-support.vercel.app/",
+    description: "Centralized student support operations desk, live query ticket dispatch, SLA tracking, and inquiry management portal.",
+    category: "Dashboards",
+    status: "Live",
+    featured: true,
+    tags: ["Support Portal", "Ticket Dispatch", "React", "Operations OS"],
+    customThumb: "https://digital-azadi-support.vercel.app/digital-azadi-logo.png",
+    clicks: 1750
+  },
+  {
+    id: "site-osk-growth-studio",
+    name: "OSK Growth Studio",
+    title: "OSK Growth Studio (OGS)",
+    url: "https://www.oskgrowthstudio.com/",
+    description: "Performance marketing agency platform & paid acquisition engine across Meta and Google for scaling growing businesses.",
+    category: "E-Commerce / SaaS",
+    status: "Live",
+    featured: true,
+    tags: ["Growth Agency", "Performance Marketing", "Paid Ads", "Lead Gen"],
+    customThumb: "https://dedicated-marketing-support.vercel.app/assets/ogs_logo.png",
+    clicks: 1620
+  },
+  {
+    id: "site-dhane-master-webinar",
+    name: "Dhane Master Webinar",
+    title: "Dhane Master M1 Masterclass",
+    url: "https://dhane-master-webinar.vercel.app/",
+    description: "MSBTE Diploma Basic Mathematics live masterclass enrollment engine & high-converting landing page by Prof. Vishal Dhane.",
+    category: "AI Web Apps",
+    status: "Live",
+    featured: true,
+    tags: ["Education Tech", "Webinar Funnel", "High Conversion", "Next.js"],
+    customThumb: "https://dhane-master-webinar.vercel.app/dhane-mastar-logo.jpg",
+    clicks: 1480
+  },
+  {
+    id: "site-vyaparprarambh-webinar",
+    name: "VyaparPrarambh Webinar",
+    title: "VyaparPrarambh Webinar Funnel",
+    url: "https://test-landing-page-woad-one.vercel.app/",
+    description: "High-converting webinar registration funnel & business workshop landing engine for Sandeep Bhansali / Digital Azadi.",
+    category: "AI Web Apps",
+    status: "Live",
+    featured: true,
+    tags: ["Webinar Funnel", "Landing Page", "Conversion Rate", "Vercel"],
+    customThumb: "https://test-landing-page-woad-one.vercel.app/assets/digital-azadi-logo.png",
+    clicks: 1540
+  },
+  {
     id: "site-classmate-cafe",
     name: "ClassMate Cafe Portal",
     title: "ClassMate Cafe Portal",
