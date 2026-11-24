@@ -44,7 +44,7 @@ export function BentoCard({ project, index }: BentoCardProps) {
                 <div className="relative h-full w-full overflow-hidden rounded-[6px]">
                   <Image
                     src={project.customThumb}
-                    alt={project.title}
+                    alt={`${project.title} - Website Development by Sachin Bandebuche Nagpur`}
                     fill
                     sizes="36px"
                     className="object-cover"

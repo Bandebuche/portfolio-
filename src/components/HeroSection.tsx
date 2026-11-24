@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Profile } from "@/types/portfolio";
 import { GitHubIcon, WhatsAppIcon, ResumeIcon } from "./Icons";
-import { ArrowDown, ArrowUpRight, CheckCircle2, Terminal, Sparkles, Layers, ShieldCheck, Zap } from "lucide-react";
+import { ArrowDown, ArrowUpRight, CheckCircle2, Sparkles, MapPin, Code2, ShoppingCart, IndianRupee } from "lucide-react";
 
 interface HeroSectionProps {
   profile: Profile;
@@ -15,10 +16,18 @@ export function HeroSection({ profile }: HeroSectionProps) {
   const [imgError, setImgError] = useState(false);
 
   const telemetryStats = [
-    { value: "35+", label: "Systems Deployed", detail: "Live in production" },
-    { value: "8+", label: "AI & SaaS Engines", detail: "LLMs, RAG, WebSockets" },
-    { value: "100%", label: "Client Satisfaction", detail: "Verified delivery" },
-    { value: "< 100ms", label: "Edge Performance", detail: "Next.js App Router" },
+    { value: "35+", label: "Websites Shipped", detail: "Nagpur & Global Live Projects" },
+    { value: "4+ Yrs", label: "Developer Experience", detail: "Next.js, WordPress, Shopify" },
+    { value: "100%", label: "Client Satisfaction", detail: "Verified Delivery & Support" },
+    { value: "< 1s", label: "Page Load Speed", detail: "Passing Core Web Vitals" },
+  ];
+
+  const quickServices = [
+    { label: "Website Developer Nagpur", href: "/website-developer-nagpur" },
+    { label: "WordPress Developer", href: "/wordpress-developer-nagpur" },
+    { label: "Shopify Developer", href: "/shopify-developer-nagpur" },
+    { label: "E-Commerce Development", href: "/ecommerce-website-development-nagpur" },
+    { label: "Website Design Cost", href: "/website-design-cost-nagpur" },
   ];
 
   return (
@@ -39,35 +48,36 @@ export function HeroSection({ profile }: HeroSectionProps) {
       {/* 3. Hero Content Container */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 text-center flex flex-col items-center">
         
-        {/* Availability Status Pill (US Tech Standard) */}
+        {/* Availability & Location Status Pill (Direct Local Signal) */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-sm"
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-sm"
         >
           <span className="relative flex h-2 w-2 items-center justify-center">
             <span className="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
           </span>
-          <span className="text-[11px] uppercase tracking-wider text-zinc-300">
-            Available for Contract & Full-Time • Worldwide Remote
+          <span className="text-[11px] uppercase tracking-wider text-zinc-300 flex items-center gap-1.5">
+            <MapPin className="w-3 h-3 text-emerald-400 inline" />
+            Based in Nagpur, India • Available for Local & Global Projects
           </span>
         </motion.div>
 
-        {/* Minimal Profile Headshot with Clean Tech Ring */}
+        {/* Profile Headshot with Descriptive Alt Text */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.45, delay: 0.1 }}
-          className="relative mb-6"
+          className="relative mb-5"
         >
           <div className="relative h-20 w-20 sm:h-24 sm:w-24 rounded-full p-[2px] bg-gradient-to-b from-indigo-500/60 via-white/20 to-transparent shadow-xl">
             <div className="relative h-full w-full overflow-hidden rounded-full bg-zinc-950">
               {!imgError ? (
                 <Image
                   src={profile.avatar}
-                  alt={profile.name}
+                  alt="Sachin Bandebuche - Freelance Website Developer in Nagpur, Maharashtra"
                   fill
                   sizes="96px"
                   priority
@@ -83,29 +93,27 @@ export function HeroSection({ profile }: HeroSectionProps) {
           </div>
         </motion.div>
 
-        {/* Strong, Precision Headline (Silicon Valley Typography) */}
+        {/* Primary Target H1: Exact Keyword Match with High Conversion Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-[1.14] sm:leading-[1.1] max-w-4xl mb-5"
+          className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-[1.15] sm:leading-[1.1] max-w-4xl mb-5"
         >
-          Engineering Production{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-indigo-400 font-bold">
-            AI Applications
-          </span>{" "}
-          <br className="hidden sm:inline" />
-          & High-Performance Web Systems.
+          Website Developer in Nagpur{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-indigo-400 font-bold block mt-1">
+            Crafting Next.js, WordPress & Shopify Solutions
+          </span>
         </motion.h1>
 
-        {/* Developer Narrative Bio */}
+        {/* Plain-Text Intro Paragraph for Crawlers and AI Answer Engines */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed font-normal mb-9"
+          className="text-base sm:text-lg text-zinc-300 max-w-3xl mx-auto leading-relaxed font-normal mb-8"
         >
-          I&apos;m <span className="text-white font-medium">{profile.name}</span>. I design and build modern Next.js web applications, sub-second telemetry dashboards, and autonomous AI integrations that solve real business bottlenecks.
+          I am <strong className="text-white font-medium">Sachin Bandebuche</strong>, a freelance website developer based in <strong className="text-white font-medium">Nagpur, Maharashtra, India</strong> with 4+ years of professional experience. I have delivered over <strong className="text-white font-medium">35+ live production websites</strong>, custom Next.js web applications, responsive WordPress business portals, and conversion-focused Shopify e-commerce platforms for clients in Nagpur and across the globe.
         </motion.p>
 
         {/* Action Button Cluster */}
@@ -113,55 +121,54 @@ export function HeroSection({ profile }: HeroSectionProps) {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-14 w-full max-w-xl"
+          className="flex flex-wrap items-center justify-center gap-3 mb-8 w-full max-w-xl"
         >
           {/* Primary CTA */}
-          <a
-            href="#featured"
-            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-white text-zinc-950 px-6 py-3 text-xs sm:text-sm font-semibold tracking-wide shadow-lg hover:bg-zinc-200 transition-all active:scale-95"
-          >
-            <span>Explore Featured Work</span>
-            <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-          </a>
-
-          {/* WhatsApp Direct */}
           <a
             href={profile.socials.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            title="Chat on WhatsApp"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-950/20 px-5 py-3 text-xs sm:text-sm font-mono text-emerald-300 backdrop-blur-md hover:border-emerald-500/60 hover:bg-emerald-900/30 transition-all active:scale-95"
+            title="Chat on WhatsApp: +91 9168727315"
+            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-zinc-950 px-6 py-3 text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-emerald-500/20 transition-all active:scale-95"
           >
-            <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
-            <span>WhatsApp (+91 9168727315)</span>
+            <WhatsAppIcon className="w-4 h-4 text-zinc-950" />
+            <span>Get a Free Quote (WhatsApp)</span>
           </a>
 
-          {/* GitHub Repos */}
+          {/* Explore Projects */}
           <a
-            href={profile.socials.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="GitHub: Bandebuche"
-            className="inline-flex items-center justify-center gap-1.5 h-11 px-4 rounded-lg border border-white/10 bg-white/[0.03] text-xs font-mono text-zinc-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06] transition-all active:scale-95"
+            href="#projects"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-white text-zinc-950 px-5 py-3 text-xs sm:text-sm font-semibold tracking-wide shadow-lg hover:bg-zinc-200 transition-all active:scale-95"
           >
-            <GitHubIcon className="w-4 h-4" />
-            <span>GitHub</span>
-            <ArrowUpRight className="w-3 h-3 text-zinc-400" />
+            <span>View 35+ Live Websites</span>
+            <ArrowDown className="w-3.5 h-3.5" />
           </a>
 
-          {/* Resume Link */}
-          <a
-            href={profile.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="View Resume"
-            className="inline-flex items-center justify-center gap-1.5 h-11 px-4 rounded-lg border border-white/10 bg-white/[0.03] text-xs font-mono text-zinc-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06] transition-all active:scale-95"
+          {/* Pricing Guide */}
+          <Link
+            href="/website-design-cost-nagpur"
+            className="inline-flex items-center justify-center gap-1.5 h-11 px-4 rounded-lg border border-white/10 bg-white/[0.04] text-xs font-mono text-zinc-300 hover:text-white hover:border-white/25 hover:bg-white/[0.08] transition-all active:scale-95"
           >
-            <ResumeIcon className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Resume</span>
-            <ArrowUpRight className="w-3 h-3 text-zinc-400" />
-          </a>
+            <IndianRupee className="w-3.5 h-3.5 text-indigo-400" />
+            <span>Nagpur Pricing Guide</span>
+          </Link>
         </motion.div>
+
+        {/* Internal Service Links Ribbon (SEO & Crawl Pathway) */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-12 max-w-3xl">
+          <span className="text-[11px] font-mono text-zinc-500 uppercase tracking-wider mr-1">
+            Nagpur Services:
+          </span>
+          {quickServices.map((svc) => (
+            <Link
+              key={svc.href}
+              href={svc.href}
+              className="text-[11px] font-mono text-zinc-400 hover:text-indigo-300 bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.06] hover:border-indigo-500/40 px-2.5 py-1 rounded-md transition-colors"
+            >
+              {svc.label}
+            </Link>
+          ))}
+        </div>
 
         {/* Linear / Stripe Style Telemetry Metrics Row */}
         <motion.div

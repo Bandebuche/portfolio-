@@ -3,9 +3,9 @@ import { Profile } from "@/types/portfolio";
 export const DEFAULT_PROFILE: Profile = {
   name: "Sachin Bandebuche",
   handle: "@sachin_bandebuche",
-  role: "Full-Stack Engineer & AI Solutions Developer",
-  tagline: "Full-Stack Engineer & AI Solutions Developer",
-  bio: "I design and build intelligent AI web applications, data-driven dashboards, and high-performance digital products that scale businesses.",
+  role: "Website Developer in Nagpur & Full-Stack Engineer",
+  tagline: "Website Developer in Nagpur | Next.js, WordPress & Shopify",
+  bio: "Sachin Bandebuche is a freelance website developer in Nagpur, Maharashtra building fast Next.js applications, responsive WordPress portals, and Shopify e-commerce platforms.",
   avatar: "https://ugc.production.linktr.ee/2631dc58-25b2-46ac-a5c7-fc2672e36a0b_image.jpeg?io=true&size=avatar-v3_0",
   resumeUrl: "https://sbresume.lovable.app/",
   email: "sachinbandebuche@gmail.com",

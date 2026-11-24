@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Project } from "@/types/portfolio";
-import { ArrowUpRight, Globe, Lock, ExternalLink, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Globe, Lock, ExternalLink, Sparkles, CheckCircle2, FileText } from "lucide-react";
 
 interface FeaturedShowcaseProps {
   projects: Project[];
@@ -14,6 +15,13 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
   // Get top 6 featured projects (including the 4 new ones: fruffles, justfarm, supports, piushbhandari)
   const featured = projects.slice(0, 6);
   const [imgError, setImgError] = useState<{ [id: string]: boolean }>({});
+
+  const caseStudyMap: { [id: string]: string } = {
+    "site-fruffles": "/projects/fruffles",
+    "site-justfarm": "/projects/justfarm",
+    "site-supports-desk": "/projects/supports-desk",
+    "site-piush-bhandari": "/projects/piush-bhandari",
+  };
 
   const getCleanDomain = (url: string) => {
     try {
@@ -33,7 +41,7 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-indigo-300 mb-3">
               <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-              <span>Silicon Valley Standard • Flagship Deployments</span>
+              <span>Silicon Valley Standard • Nagpur & Global Deployments</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               Selected Production Systems
@@ -57,6 +65,7 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
           {featured.map((project, idx) => {
             const hasError = imgError[project.id];
             const cleanUrl = getCleanDomain(project.url);
+            const caseStudyUrl = caseStudyMap[project.id];
 
             return (
               <motion.div
@@ -97,7 +106,7 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
                       {project.customThumb && !hasError ? (
                         <Image
                           src={project.customThumb}
-                          alt={project.title}
+                          alt={`${project.title} - Website Development by Sachin Bandebuche Nagpur`}
                           fill
                           sizes="(max-width: 768px) 100vw, 50vw"
                           className="object-cover object-center filter contrast-105 group-hover:scale-105 transition-transform duration-500"
@@ -127,7 +136,7 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
                     </p>
                   </div>
 
-                  {/* Tech Tags & Launch Button */}
+                  {/* Tech Tags & Launch Buttons */}
                   <div>
                     <div className="flex flex-wrap items-center gap-1.5 mb-5">
                       {project.tags.slice(0, 4).map((tag, tagIdx) => (
@@ -140,16 +149,29 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
                       ))}
                     </div>
 
-                    {/* Launch Live App Button */}
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.05] px-4 py-2.5 text-xs font-mono font-medium text-white hover:border-indigo-500/50 hover:bg-indigo-600 hover:text-white transition-all active:scale-[0.98]"
-                    >
-                      <span>Launch Live Application</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </a>
+                    <div className="flex items-center gap-2">
+                      {/* Launch Live App Button */}
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.05] px-4 py-2.5 text-xs font-mono font-medium text-white hover:border-indigo-500/50 hover:bg-indigo-600 hover:text-white transition-all active:scale-[0.98]"
+                      >
+                        <span>Launch App</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </a>
+
+                      {/* Case study link if available */}
+                      {caseStudyUrl && (
+                        <Link
+                          href={caseStudyUrl}
+                          className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 px-3.5 py-2.5 text-xs font-mono text-indigo-300 transition-colors"
+                        >
+                          <FileText className="w-3.5 h-3.5 text-indigo-400" />
+                          <span>Case Study</span>
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
 

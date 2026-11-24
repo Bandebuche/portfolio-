@@ -34,17 +34,17 @@ export function ContactSection({ profile }: ContactSectionProps) {
           className="pointer-events-none absolute -bottom-20 left-1/2 -translate-x-1/2 h-60 w-[500px] rounded-full bg-indigo-600/10 blur-3xl opacity-60"
         />
 
-        <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-indigo-300 mb-4">
-          <Terminal className="w-3.5 h-3.5 text-indigo-400" />
-          <span>Initiate Collaboration • Q1/Q2 Contract & Full-Time</span>
+        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-emerald-300 mb-4">
+          <Terminal className="w-3.5 h-3.5 text-emerald-400" />
+          <span>Website Developer in Nagpur • Available for Local & Global Projects</span>
         </div>
 
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-2xl mx-auto mb-4">
-          Ready to engineer your next <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-indigo-400 font-extrabold">production system</span>?
+          Ready to build your next <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-indigo-400 font-extrabold">website or web application</span>?
         </h2>
 
-        <p className="text-sm sm:text-base text-zinc-400 max-w-xl mx-auto mb-9 leading-relaxed">
-          Available for autonomous AI applications, bespoke high-density telemetry dashboards, and performance-driven web platforms.
+        <p className="text-sm sm:text-base text-zinc-300 max-w-xl mx-auto mb-9 leading-relaxed">
+          Based in Nagpur, Maharashtra. Available for in-person meetings in Sadar, Dharampeth, Ramdaspeth, and Wardha Road, as well as worldwide remote consulting.
         </p>
 
         {/* Action Buttons */}

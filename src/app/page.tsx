@@ -7,6 +7,7 @@ import { TechStackSlider } from "@/components/TechStackSlider";
 import { FeaturedShowcase } from "@/components/FeaturedShowcase";
 import { CoreExpertise } from "@/components/CoreExpertise";
 import { BentoGrid } from "@/components/BentoGrid";
+import { HomeFaqSection } from "@/components/HomeFaqSection";
 import { FloatingDock } from "@/components/FloatingDock";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
@@ -52,10 +53,13 @@ export default function HomePage() {
         {/* 5. Complete 35+ Systems Index with Live Filter & Search */}
         <BentoGrid initialProjects={projects} />
 
-        {/* 6. Production Partnership & Contact Panel */}
+        {/* 6. Nagpur Web Development FAQs & Schema */}
+        <HomeFaqSection />
+
+        {/* 7. Production Partnership & Contact Panel */}
         <ContactSection profile={DEFAULT_PROFILE} />
 
-        {/* 7. Footer */}
+        {/* 8. Footer */}
         <Footer profile={DEFAULT_PROFILE} />
 
         {/* 8. Minimalist Floating Dock */}
