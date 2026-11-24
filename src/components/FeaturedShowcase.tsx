@@ -1,0 +1,164 @@
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Project } from "@/types/portfolio";
+import { ArrowUpRight, Globe, Lock, ExternalLink, Sparkles, CheckCircle2 } from "lucide-react";
+
+interface FeaturedShowcaseProps {
+  projects: Project[];
+}
+
+export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
+  // Get top 6 featured projects (including the 4 new ones: fruffles, justfarm, supports, piushbhandari)
+  const featured = projects.slice(0, 6);
+  const [imgError, setImgError] = useState<{ [id: string]: boolean }>({});
+
+  const getCleanDomain = (url: string) => {
+    try {
+      const parsed = new URL(url);
+      return parsed.hostname + (parsed.pathname !== "/" ? parsed.pathname : "");
+    } catch {
+      return url.replace(/^https?:\/\//, "");
+    }
+  };
+
+  return (
+    <section id="featured" className="relative w-full py-20 lg:py-28 overflow-hidden bg-[#08090D] text-white">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 sm:mb-16 gap-4 border-b border-white/[0.08] pb-8">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-indigo-300 mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+              <span>Silicon Valley Standard • Flagship Deployments</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              Selected Production Systems
+            </h2>
+            <p className="text-sm sm:text-base text-zinc-400 mt-2 max-w-xl">
+              End-to-end full-stack architectures built for real businesses, high conversion, and sub-second SLAs.
+            </p>
+          </div>
+
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
+          >
+            <span>View All 35+ Production Deployments</span>
+            <ArrowUpRight className="w-4 h-4 text-indigo-400" />
+          </a>
+        </div>
+
+        {/* 2-Column High-Impact Product Cards with macOS Window Chrome */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {featured.map((project, idx) => {
+            const hasError = imgError[project.id];
+            const cleanUrl = getCleanDomain(project.url);
+
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-card hover:border-indigo-500/40 hover:bg-surface-cardHover transition-all duration-300 shadow-tech-card hover:shadow-tech-hover"
+              >
+                {/* macOS Style Window Header Bar */}
+                <div className="flex items-center justify-between border-b border-white/[0.07] bg-surface-elevated/70 px-4 py-3">
+                  {/* Traffic Light Window Controls */}
+                  <div className="flex items-center gap-2">
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]/80" />
+                  </div>
+
+                  {/* Clean URL Bar Pill */}
+                  <div className="flex items-center gap-1.5 rounded-md border border-white/[0.06] bg-black/40 px-3 py-1 text-[11px] font-mono text-zinc-400 max-w-[260px] truncate">
+                    <Lock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
+                    <span className="truncate">{cleanUrl}</span>
+                  </div>
+
+                  {/* Live Status Badge */}
+                  <div className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider text-emerald-400">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Live</span>
+                  </div>
+                </div>
+
+                {/* Card Body & Preview */}
+                <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+                  <div>
+                    {/* Visual Preview / Thumbnail Banner */}
+                    <div className="relative mb-5 h-48 sm:h-56 w-full overflow-hidden rounded-xl border border-white/[0.06] bg-black/60 group-hover:border-white/15 transition-all">
+                      {project.customThumb && !hasError ? (
+                        <Image
+                          src={project.customThumb}
+                          alt={project.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover object-center filter contrast-105 group-hover:scale-105 transition-transform duration-500"
+                          onError={() => setImgError((prev) => ({ ...prev, [project.id]: true }))}
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-zinc-950 text-zinc-500">
+                          <Globe className="h-10 w-10 text-zinc-700 group-hover:text-indigo-400 transition-colors" />
+                        </div>
+                      )}
+
+                      {/* Subtle gradient vignette */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                      {/* Category overlay pill */}
+                      <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-md border border-white/10 bg-black/75 px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-zinc-300 backdrop-blur-md">
+                        <span>{project.category}</span>
+                      </div>
+                    </div>
+
+                    {/* Title & Description */}
+                    <h3 className="text-xl font-bold tracking-tight text-white group-hover:text-indigo-200 transition-colors mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* Tech Tags & Launch Button */}
+                  <div>
+                    <div className="flex flex-wrap items-center gap-1.5 mb-5">
+                      {project.tags.slice(0, 4).map((tag, tagIdx) => (
+                        <span
+                          key={tagIdx}
+                          className="rounded-md border border-white/[0.06] bg-white/[0.03] px-2.5 py-1 text-[11px] font-mono text-zinc-400"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Launch Live App Button */}
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.05] px-4 py-2.5 text-xs font-mono font-medium text-white hover:border-indigo-500/50 hover:bg-indigo-600 hover:text-white transition-all active:scale-[0.98]"
+                    >
+                      <span>Launch Live Application</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+              </motion.div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+}

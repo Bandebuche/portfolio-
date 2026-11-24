@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Profile } from "@/types/portfolio";
+import { ArrowUpRight } from "lucide-react";
 
 interface FooterProps {
   profile: Profile;
@@ -9,66 +10,76 @@ interface FooterProps {
 
 export function Footer({ profile }: FooterProps) {
   return (
-    <footer className="mt-20 border-t border-white/[0.06] bg-[#040507] pb-28 pt-12 text-xs text-zinc-500 backdrop-blur-md">
+    <footer className="mt-20 border-t border-white/[0.08] bg-[#06070a] pb-24 pt-12 text-xs text-zinc-500">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:flex-row sm:px-6 lg:px-8">
 
-        {/* Brand mark & info */}
-        <div className="flex items-center gap-3">
-          <div className="w-6 h-6 flex items-center justify-center text-aleph-gold opacity-80">
-            <svg viewBox="0 0 50 50" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="25" cy="25" r="23" stroke="currentColor" strokeWidth="1.5" opacity="0.4" strokeDasharray="2 3" />
-              <circle cx="25" cy="25" r="14" stroke="currentColor" strokeWidth="1.5" opacity="0.8" />
-              <circle cx="25" cy="25" r="6" fill="currentColor" />
-            </svg>
+        {/* Brand info & timezone */}
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 text-center sm:text-left">
+          <div className="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-xs font-mono font-bold text-white">
+            SB
           </div>
           <div className="flex flex-col">
-            <p className="font-mono text-zinc-300 tracking-wider uppercase text-[11px]">
-              webtree<span className="text-aleph-gold">.ai</span> • {profile.name}
+            <p className="font-mono text-zinc-300 text-xs">
+              {profile.name} • Full-Stack Engineer & AI Solutions
             </p>
-            <p className="text-[10px] text-zinc-500 font-mono">
-              Aleph Studios Inspired Architecture & Animation Systems
+            <p className="text-[11px] text-zinc-500 font-mono mt-0.5">
+              Nagpur, India (IST • UTC+5:30) • Operating Worldwide
             </p>
           </div>
         </div>
 
-        {/* Links */}
-        <div className="flex items-center gap-4 text-[11px] font-mono uppercase tracking-wider text-zinc-400">
+        {/* System status & links */}
+        <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-zinc-400">
+          <span className="inline-flex items-center gap-1.5 text-emerald-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Systems Online</span>
+          </span>
+
+          <span className="text-zinc-700">•</span>
+
           <a
             href={profile.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-white"
+            className="hover:text-white transition-colors"
           >
             Resume
           </a>
-          <span>•</span>
+
+          <span className="text-zinc-700">•</span>
+
           <a
             href={profile.socials.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-white"
+            className="hover:text-white transition-colors"
           >
             GitHub
           </a>
-          <span>•</span>
+
+          <span className="text-zinc-700">•</span>
+
           <a
             href={profile.socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-white"
+            className="hover:text-white transition-colors"
           >
             LinkedIn
           </a>
-          <span>•</span>
+
+          <span className="text-zinc-700">•</span>
+
           <a
             href={profile.socials.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors text-emerald-400 hover:text-emerald-300"
+            className="text-emerald-400 hover:text-emerald-300 transition-colors"
           >
             WhatsApp
           </a>
         </div>
+
       </div>
     </footer>
   );

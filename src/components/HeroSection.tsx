@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Profile } from "@/types/portfolio";
 import { GitHubIcon, WhatsAppIcon, ResumeIcon } from "./Icons";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, CheckCircle2, Terminal, Sparkles, Layers, ShieldCheck, Zap } from "lucide-react";
 
 interface HeroSectionProps {
   profile: Profile;
@@ -13,92 +13,69 @@ interface HeroSectionProps {
 
 export function HeroSection({ profile }: HeroSectionProps) {
   const [imgError, setImgError] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const keyMetrics = [
-    { value: "35+", label: "Projects Delivered" },
-    { value: "8+", label: "SaaS & AI Platforms" },
-    { value: "100%", label: "Client Satisfaction" },
+  const telemetryStats = [
+    { value: "35+", label: "Systems Deployed", detail: "Live in production" },
+    { value: "8+", label: "AI & SaaS Engines", detail: "LLMs, RAG, WebSockets" },
+    { value: "100%", label: "Client Satisfaction", detail: "Verified delivery" },
+    { value: "< 100ms", label: "Edge Performance", detail: "Next.js App Router" },
   ];
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center items-center pt-24 pb-14 md:pt-32 md:pb-20 overflow-hidden bg-[#060709] text-white">
+    <section className="relative min-h-[85vh] md:min-h-[92vh] flex flex-col justify-center items-center pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-[#08090D] text-white">
       
-      {/* 1. Ambient Background Atmosphere (Aleph Studios Ethereal Glows) */}
+      {/* 1. Silicon Valley Precision Grid Background */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,rgba(212,181,127,0.08),transparent_70%)]" 
+        className="pointer-events-none absolute inset-0 z-0 bg-tech-grid opacity-70 [mask-image:radial-gradient(ellipse_75%_60%_at_50%_35%,#000_65%,transparent_100%)]" 
       />
+
+      {/* 2. Ambient Electric Spotlight Glows */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[450px] aleph-sphere-aura blur-3xl opacity-50 z-0" 
+        className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-indigo-600/10 via-blue-500/10 to-transparent blur-3xl opacity-60 z-0" 
       />
 
-      {/* 2. THE ICONIC MORPHING GLASS SPHERE (Responsive Background Centerpiece) */}
-      <div 
-        aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[52%] w-[280px] sm:w-[420px] md:w-[540px] lg:w-[620px] aspect-square flex items-center justify-center z-0"
-      >
-        <div className="relative w-full h-full animate-sphere-float mix-blend-screen opacity-70 sm:opacity-85 filter contrast-110 brightness-105">
-          <video
-            ref={videoRef}
-            className="w-full h-full object-contain"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src="/assets/aleph/cover-home-sphere.webm" type="video/webm" />
-            <source src="/assets/aleph/cover-home-sphere.mov" type="video/quicktime" />
-          </video>
-        </div>
-
-        {/* Outer Circular Optical Ring (Subtle Celestial Arc) */}
-        <div className="absolute inset-[-4%] rounded-full border border-white/[0.05] animate-infinite-rotation-slow pointer-events-none opacity-40">
-          <div className="w-full h-full rounded-full border border-dashed border-aleph-gold/20" />
-        </div>
-      </div>
-
-      {/* 3. Clean, Human & Understandable Hero Content Container */}
-      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 text-center flex flex-col items-center">
+      {/* 3. Hero Content Container */}
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 text-center flex flex-col items-center">
         
-        {/* Availability Status Pill */}
+        {/* Availability Status Pill (US Tech Standard) */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-sm"
+          transition={{ duration: 0.4 }}
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs font-mono text-zinc-300 backdrop-blur-md shadow-sm"
         >
           <span className="relative flex h-2 w-2 items-center justify-center">
             <span className="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
           </span>
           <span className="text-[11px] uppercase tracking-wider text-zinc-300">
-            {profile.availabilityText}
+            Available for Contract & Full-Time • Worldwide Remote
           </span>
         </motion.div>
 
-        {/* Profile Avatar with Subtle Glow */}
+        {/* Minimal Profile Headshot with Clean Tech Ring */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative mb-4 group cursor-pointer"
+          transition={{ duration: 0.45, delay: 0.1 }}
+          className="relative mb-6"
         >
-          <div className="relative h-16 w-16 sm:h-20 sm:w-20 rounded-full p-[1.5px] bg-gradient-to-b from-aleph-gold/70 via-white/20 to-aleph-sage/50 shadow-xl transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-20 w-20 sm:h-24 sm:w-24 rounded-full p-[2px] bg-gradient-to-b from-indigo-500/60 via-white/20 to-transparent shadow-xl">
             <div className="relative h-full w-full overflow-hidden rounded-full bg-zinc-950">
               {!imgError ? (
                 <Image
                   src={profile.avatar}
                   alt={profile.name}
                   fill
-                  sizes="80px"
+                  sizes="96px"
                   priority
-                  className="object-cover object-top filter grayscale contrast-105 transition-all duration-300 group-hover:grayscale-0 group-hover:scale-110"
+                  className="object-cover object-top filter grayscale contrast-105 hover:grayscale-0 transition-all duration-300"
                   onError={() => setImgError(true)}
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center bg-zinc-900 text-sm font-mono text-aleph-gold">
+                <div className="flex h-full w-full items-center justify-center bg-zinc-900 text-sm font-mono text-indigo-400 font-bold">
                   SB
                 </div>
               )}
@@ -106,68 +83,70 @@ export function HeroSection({ profile }: HeroSectionProps) {
           </div>
         </motion.div>
 
-        {/* Clear, Punchy, Understandable Headline */}
+        {/* Strong, Precision Headline (Silicon Valley Typography) */}
         <motion.h1
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.15 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white leading-[1.18] sm:leading-[1.12] max-w-3xl mb-4"
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-[1.14] sm:leading-[1.1] max-w-4xl mb-5"
         >
-          Building{" "}
-          <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-aleph-champagne to-aleph-gold">
-            Intelligent AI Web Apps
+          Engineering Production{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-indigo-400 font-bold">
+            AI Applications
           </span>{" "}
           <br className="hidden sm:inline" />
-          <span className="text-zinc-200 font-light">& High-Performance Websites.</span>
+          & High-Performance Web Systems.
         </motion.h1>
 
-        {/* Simple & Clear Bio Narrative */}
+        {/* Developer Narrative Bio */}
         <motion.p
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.2 }}
-          className="text-sm sm:text-base md:text-lg text-zinc-400 max-w-xl mx-auto leading-relaxed font-normal mb-8"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed font-normal mb-9"
         >
-          Hi, I&apos;m <span className="text-white font-medium">{profile.name}</span>. I design and build fast, modern web applications, custom analytics dashboards, and autonomous AI integrations that help businesses grow.
+          I&apos;m <span className="text-white font-medium">{profile.name}</span>. I design and build modern Next.js web applications, sub-second telemetry dashboards, and autonomous AI integrations that solve real business bottlenecks.
         </motion.p>
 
-        {/* Primary Action Buttons: Clean, High-Contrast & Responsive */}
+        {/* Action Button Cluster */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.25 }}
-          className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10 w-full max-w-md"
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="flex flex-wrap items-center justify-center gap-3 mb-14 w-full max-w-xl"
         >
-          {/* Primary CTA: Explore Work */}
+          {/* Primary CTA */}
           <a
-            href="#ventures"
-            className="group flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-full bg-white text-zinc-950 px-6 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-lg transition-all hover:bg-aleph-champagne hover:shadow-aleph-gold/25 active:scale-95"
+            href="#featured"
+            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-white text-zinc-950 px-6 py-3 text-xs sm:text-sm font-semibold tracking-wide shadow-lg hover:bg-zinc-200 transition-all active:scale-95"
           >
-            <span>Explore Work</span>
-            <ArrowDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
+            <span>Explore Featured Work</span>
+            <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
           </a>
 
-          {/* WhatsApp Direct Chat */}
+          {/* WhatsApp Direct */}
           <a
             href={profile.socials.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             title="Chat on WhatsApp"
-            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/25 px-5 py-3 text-xs sm:text-sm font-mono uppercase tracking-wider text-emerald-300 backdrop-blur-md transition-all hover:border-emerald-500/60 hover:bg-emerald-900/40 active:scale-95"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-950/20 px-5 py-3 text-xs sm:text-sm font-mono text-emerald-300 backdrop-blur-md hover:border-emerald-500/60 hover:bg-emerald-900/30 transition-all active:scale-95"
           >
             <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
-            <span>WhatsApp</span>
+            <span>WhatsApp (+91 9168727315)</span>
           </a>
 
-          {/* GitHub Icon Link */}
+          {/* GitHub Repos */}
           <a
             href={profile.socials.github}
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub: Bandebuche"
-            className="inline-flex items-center justify-center h-10 w-10 sm:h-11 sm:w-11 rounded-full border border-white/10 bg-white/[0.04] text-zinc-300 hover:text-white hover:border-white/30 transition-all active:scale-95"
+            className="inline-flex items-center justify-center gap-1.5 h-11 px-4 rounded-lg border border-white/10 bg-white/[0.03] text-xs font-mono text-zinc-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06] transition-all active:scale-95"
           >
             <GitHubIcon className="w-4 h-4" />
+            <span>GitHub</span>
+            <ArrowUpRight className="w-3 h-3 text-zinc-400" />
           </a>
 
           {/* Resume Link */}
@@ -176,52 +155,38 @@ export function HeroSection({ profile }: HeroSectionProps) {
             target="_blank"
             rel="noopener noreferrer"
             title="View Resume"
-            className="inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-full border border-white/10 bg-white/[0.04] text-xs font-mono uppercase tracking-wider text-zinc-300 hover:text-white hover:border-white/30 transition-all active:scale-95"
+            className="inline-flex items-center justify-center gap-1.5 h-11 px-4 rounded-lg border border-white/10 bg-white/[0.03] text-xs font-mono text-zinc-300 hover:text-white hover:border-white/25 hover:bg-white/[0.06] transition-all active:scale-95"
           >
-            <ResumeIcon className="w-3.5 h-3.5 text-aleph-gold" />
+            <ResumeIcon className="w-3.5 h-3.5 text-indigo-400" />
             <span>Resume</span>
             <ArrowUpRight className="w-3 h-3 text-zinc-400" />
           </a>
         </motion.div>
 
-        {/* Clean, Simple 3-Pillar Metrics Strip */}
+        {/* Linear / Stripe Style Telemetry Metrics Row */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.3 }}
-          className="w-full max-w-lg rounded-2xl border border-white/[0.08] bg-[#0c0e13]/60 backdrop-blur-xl p-3 sm:p-4 shadow-aleph-card"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="w-full max-w-4xl rounded-xl border border-white/[0.08] bg-surface-card/80 backdrop-blur-xl p-4 sm:p-5 shadow-tech-card"
         >
-          <div className="grid grid-cols-3 divide-x divide-white/[0.08] text-center">
-            {keyMetrics.map((item, idx) => (
-              <div key={idx} className="px-2">
-                <div className="text-lg sm:text-xl md:text-2xl font-light text-white font-mono tracking-tight">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 divide-y md:divide-y-0 md:divide-x divide-white/[0.07] text-left">
+            {telemetryStats.map((item, idx) => (
+              <div key={idx} className={`${idx > 0 ? "pt-3 md:pt-0 md:pl-5" : "pl-2"}`}>
+                <div className="text-xl sm:text-2xl font-bold text-white font-mono tracking-tight">
                   {item.value}
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-zinc-400 mt-0.5">
+                <div className="text-xs font-medium text-zinc-300 mt-0.5">
                   {item.label}
+                </div>
+                <div className="text-[11px] text-zinc-400 font-mono mt-0.5">
+                  {item.detail}
                 </div>
               </div>
             ))}
           </div>
         </motion.div>
 
-      </div>
-
-      {/* 4. Minimalist Aleph Arrow Capsule Indicator at Bottom */}
-      <div className="relative z-10 pt-6 flex flex-col items-center">
-        <a
-          href="#ventures"
-          aria-label="Scroll to Ventures"
-          className="group flex flex-col items-center gap-1 transition-transform hover:translate-y-1"
-        >
-          <span className="w-8 h-12 flex justify-center items-center border border-white/15 rounded-full bg-white/[0.02] backdrop-blur-sm group-hover:border-aleph-gold/50 group-hover:bg-white/[0.06] transition-all">
-            <span className="w-2.5 text-zinc-400 group-hover:text-aleph-gold rotate-90 transition-colors">
-              <svg width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 25.5023L25.0023 51L21.6693 47.6003L40.9769 27.9065H0V23.0981H40.9769L21.6693 3.39969L25.0023 0L50 25.5023Z" fill="currentColor"/>
-              </svg>
-            </span>
-          </span>
-        </a>
       </div>
 
     </section>

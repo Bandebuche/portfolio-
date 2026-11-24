@@ -2,110 +2,103 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Bot, BarChart3, Zap, Sparkles } from "lucide-react";
+import { Bot, BarChart3, Zap, ShieldCheck, Terminal, Cpu, Database, Cloud } from "lucide-react";
 
 export function CoreExpertise() {
-  const offerings = [
+  const pillars = [
     {
-      id: "ai-apps",
-      icon: <Bot className="h-5 w-5 text-aleph-gold" />,
-      badge: "AI Autonomy & Agents",
-      title: "AI-Powered Systems & Autonomous Agents",
+      id: "ai-agents",
+      icon: <Bot className="h-5 w-5 text-indigo-400" />,
+      tag: "01 • INTELLIGENT SYSTEMS",
+      title: "Autonomous AI & Agent Workflows",
       description:
-        "Engineered AI workflows integrated with frontier LLMs, multi-agent frameworks, vector search (RAG), and smart automated dispatch engines.",
-      tags: ["Autonomous Agents", "RAG Pipelines", "FastAPI / Python", "Function Calling", "Smart Automation"],
-      accentColor: "border-aleph-gold/30 hover:border-aleph-gold/60",
-      haloGradient: "from-aleph-gold/10 via-transparent to-transparent",
+        "Engineered AI workflows powered by frontier LLMs, function calling, vector RAG search, and automated multi-agent triage systems.",
+      stack: ["OpenAI / Claude APIs", "FastAPI & Python", "RAG Embeddings", "Multi-Agent Queues"],
     },
     {
       id: "dashboards",
-      icon: <BarChart3 className="h-5 w-5 text-aleph-sage" />,
-      badge: "Real-Time Telemetry",
-      title: "High-Density Analytics & Operations Consoles",
+      icon: <BarChart3 className="h-5 w-5 text-cyan-400" />,
+      tag: "02 • REAL-TIME TELEMETRY",
+      title: "High-Density Operations & SLA Consoles",
       description:
-        "Sub-second interactive consoles, real-time KPI data streaming, Kanban operations queues, SLA metrics decks, and mission-critical admin hubs.",
-      tags: ["Real-Time KPIs", "Operations OS", "Kanban Triage", "REST & WebSockets", "Sub-Second UX"],
-      accentColor: "border-aleph-sage/30 hover:border-aleph-sage/60",
-      haloGradient: "from-aleph-sage/10 via-transparent to-transparent",
+        "Sub-second interactive consoles, real-time KPI streaming, Kanban operations queues, and enterprise SLA escalation desks.",
+      stack: ["WebSockets Streaming", "Kanban Triage", "SLA Escalation", "Sub-100ms Latency"],
     },
     {
-      id: "saas-ecommerce",
-      icon: <Zap className="h-5 w-5 text-aleph-champagne" />,
-      badge: "Conversion & SaaS",
-      title: "Scalable SaaS Platforms & Bespoke Funnels",
+      id: "nextjs-systems",
+      icon: <Zap className="h-5 w-5 text-emerald-400" />,
+      tag: "03 • PRODUCTION FRONTEND",
+      title: "High-Performance Next.js 14 Web Apps",
       description:
-        "End-to-end cloud architectures, subscription billing, high-converting webinar registration engines, and custom headless commerce platforms.",
-      tags: ["SaaS Architecture", "Stripe Billing", "Conversion Funnels", "Next.js 14", "Global Scale"],
-      accentColor: "border-aleph-champagne/30 hover:border-aleph-champagne/60",
-      haloGradient: "from-aleph-champagne/10 via-transparent to-transparent",
+        "Edge-rendered React 18 architectures, server components, fluid animations, and high-converting marketing funnels.",
+      stack: ["Next.js 14 App Router", "Server Components", "Tailwind CSS", "Framer Motion"],
+    },
+    {
+      id: "cloud-scale",
+      icon: <Cloud className="h-5 w-5 text-violet-400" />,
+      tag: "04 • INFRASTRUCTURE & SCALE",
+      title: "Cloud Services, Databases & Payments",
+      description:
+        "Robust backend integrations with Stripe subscription billing, Supabase PostgreSQL, edge caching, and serverless compute.",
+      stack: ["Stripe Billing", "Supabase / PostgreSQL", "Vercel & Cloudflare", "REST & GraphQL"],
     },
   ];
 
   return (
-    <section id="expertise" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#060709] text-white">
+    <section id="architecture" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#08090D] text-white">
       {/* Section Header */}
-      <div className="mb-12 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-[11px] font-mono uppercase tracking-widest text-aleph-champagne mb-3 backdrop-blur-md">
-            <Sparkles className="h-3 w-3 text-aleph-gold" />
-            <span>Core Pillars • Engineering Focus</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-white">
-            Architected for <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-white via-aleph-champagne to-aleph-gold">Intelligence & Scale</span>
-          </h2>
-          <p className="text-sm text-zinc-400 mt-1 max-w-xl font-normal">
-            Specialized engineering capabilities across generative intelligence, high-density telemetry, and conversion engines.
-          </p>
+      <div className="mb-12 border-b border-white/[0.08] pb-8">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-zinc-300 mb-3">
+          <Terminal className="h-3.5 w-3.5 text-indigo-400" />
+          <span>Core Engineering Disciplines</span>
         </div>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Architected for Production & Speed
+        </h2>
+        <p className="text-sm sm:text-base text-zinc-400 mt-2 max-w-xl">
+          Four specialized engineering pillars designed to scale applications from initial concept to high-volume production.
+        </p>
       </div>
 
-      {/* Bento Grid: 3 Pillars */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {offerings.map((card, idx) => (
+      {/* 4-Card Silicon Valley Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+        {pillars.map((item, idx) => (
           <motion.div
-            key={card.id}
-            initial={{ opacity: 0, y: 20 }}
+            key={item.id}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: idx * 0.1 }}
-            whileHover={{ y: -4 }}
-            className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0c0e12] p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 shadow-aleph-card hover:shadow-aleph-hover ${card.accentColor}`}
+            transition={{ duration: 0.45, delay: idx * 0.08 }}
+            className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-card p-6 sm:p-7 hover:border-indigo-500/40 hover:bg-surface-cardHover transition-all duration-300 shadow-tech-card"
           >
-            {/* Ambient Radial Gradient Inside Card */}
-            <div
-              className={`pointer-events-none absolute -top-20 -right-20 h-44 w-44 rounded-full bg-gradient-to-br ${card.haloGradient} blur-2xl opacity-40 transition-opacity duration-300 group-hover:opacity-80`}
-            />
-
             <div>
-              {/* Card Header with Icon & Badge */}
-              <div className="flex items-center justify-between mb-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] shadow-inner">
-                  {card.icon}
-                </div>
-                <span className="text-[10px] font-mono tracking-widest uppercase text-zinc-400 px-2.5 py-1 rounded-full border border-white/[0.06] bg-white/[0.02]">
-                  {card.badge}
+              {/* Header: Tag + Icon */}
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <span className="text-[11px] font-mono tracking-wider text-zinc-400 uppercase">
+                  {item.tag}
                 </span>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] group-hover:border-indigo-500/40 group-hover:bg-indigo-500/10 transition-colors">
+                  {item.icon}
+                </div>
               </div>
 
-              {/* Title */}
-              <h3 className="text-lg font-medium tracking-tight text-white mb-2 group-hover:text-aleph-champagne transition-colors">
-                {card.title}
+              {/* Title & Description */}
+              <h3 className="text-xl font-bold tracking-tight text-white mb-2 group-hover:text-indigo-200 transition-colors">
+                {item.title}
               </h3>
-
-              {/* Description */}
-              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-5">
-                {card.description}
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+                {item.description}
               </p>
             </div>
 
-            {/* Tags Pills */}
-            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/[0.05]">
-              {card.tags.map((tag, tIdx) => (
+            {/* Tech Chips */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-4 border-t border-white/[0.06]">
+              {item.stack.map((tech, techIdx) => (
                 <span
-                  key={tIdx}
-                  className="rounded-full border border-white/[0.06] bg-white/[0.02] px-2.5 py-0.5 text-[10px] font-mono text-zinc-400"
+                  key={techIdx}
+                  className="rounded-md border border-white/[0.06] bg-black/40 px-2.5 py-1 text-[11px] font-mono text-zinc-400"
                 >
-                  {tag}
+                  {tech}
                 </span>
               ))}
             </div>

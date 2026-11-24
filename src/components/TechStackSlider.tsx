@@ -4,17 +4,18 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const TECH_ITEMS = [
-  "Next.js 14",
-  "React 18",
+  "Next.js 14 App Router",
+  "React 18 & Server Components",
   "Autonomous AI Agents",
-  "LLM API Integrations",
-  "Real-Time Telemetry Dashboards",
-  "SaaS Architecture",
+  "OpenAI & Claude LLM APIs",
   "FastAPI & Python",
   "TypeScript",
   "Tailwind CSS",
-  "Supabase / PostgreSQL",
-  "Headless E-Commerce",
+  "Real-Time WebSockets",
+  "PostgreSQL & Supabase",
+  "Stripe Billing & Subscriptions",
+  "Vercel Edge & Cloudflare Workers",
+  "Headless Shopify & Liquid",
 ];
 
 export function TechStackSlider() {
@@ -22,14 +23,10 @@ export function TechStackSlider() {
     return (
       <div
         key={key}
-        className="group relative inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 backdrop-blur-md transition-all duration-300 hover:border-aleph-gold/40 hover:bg-white/[0.05] hover:scale-105 active:scale-95 cursor-pointer"
+        className="group relative inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-surface-subtle px-3.5 py-1.5 backdrop-blur-md transition-all duration-200 hover:border-indigo-500/40 hover:bg-surface-elevated hover:text-white cursor-pointer"
       >
-        {/* Glowing champagne / gold status dot */}
-        <span className="relative flex h-1.5 w-1.5 flex-shrink-0 items-center justify-center">
-          <span className="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-aleph-champagne opacity-75" />
-          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-aleph-gold shadow-[0_0_8px_rgba(212,181,127,0.8)]" />
-        </span>
-        <span className="text-xs font-mono uppercase tracking-widest text-zinc-300 group-hover:text-white transition-colors whitespace-nowrap">
+        <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-300 shadow-[0_0_6px_rgba(99,102,241,0.8)]" />
+        <span className="text-xs font-mono tracking-wide text-zinc-300 group-hover:text-white transition-colors whitespace-nowrap">
           {name}
         </span>
       </div>
@@ -38,36 +35,36 @@ export function TechStackSlider() {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 15 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="relative w-full py-6 overflow-hidden bg-[#060709] border-y border-white/[0.05]"
-      aria-label="Core Technology Foundations"
+      transition={{ duration: 0.4 }}
+      className="relative w-full py-5 overflow-hidden bg-[#08090D] border-y border-white/[0.07]"
+      aria-label="Core Engineering Stack"
     >
-      {/* Subtle left gradient fade mask */}
+      {/* Left gradient fade mask */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-24 sm:w-44 bg-gradient-to-r from-[#060709] via-[#060709]/80 to-transparent"
+        className="pointer-events-none absolute left-0 top-0 bottom-0 z-20 w-20 sm:w-36 bg-gradient-to-r from-[#08090D] via-[#08090D]/80 to-transparent"
       />
 
-      {/* Subtle right gradient fade mask */}
+      {/* Right gradient fade mask */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-24 sm:w-44 bg-gradient-to-l from-[#060709] via-[#060709]/80 to-transparent"
+        className="pointer-events-none absolute right-0 top-0 bottom-0 z-20 w-20 sm:w-36 bg-gradient-to-l from-[#08090D] via-[#08090D]/80 to-transparent"
       />
 
-      {/* Marquee Track Container with Pause on Hover */}
+      {/* Marquee Track */}
       <div className="pause-hover flex w-full overflow-hidden select-none">
         {/* Track 1 */}
-        <div className="flex w-max shrink-0 animate-marquee items-center gap-3 sm:gap-4 pr-3 sm:pr-4 will-change-transform translate-z-0">
+        <div className="flex w-max shrink-0 animate-marquee items-center gap-3 sm:gap-3.5 pr-3 sm:pr-3.5 will-change-transform">
           {TECH_ITEMS.map((item, idx) => renderPill(item, `tech-1-${idx}`))}
         </div>
 
-        {/* Track 2 (Seamless loop duplicate) */}
+        {/* Track 2 */}
         <div
           aria-hidden="true"
-          className="flex w-max shrink-0 animate-marquee items-center gap-3 sm:gap-4 pr-3 sm:pr-4 will-change-transform translate-z-0"
+          className="flex w-max shrink-0 animate-marquee items-center gap-3 sm:gap-3.5 pr-3 sm:pr-3.5 will-change-transform"
         >
           {TECH_ITEMS.map((item, idx) => renderPill(item, `tech-2-${idx}`))}
         </div>

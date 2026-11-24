@@ -49,25 +49,25 @@ export function BentoGrid({ initialProjects }: BentoGridProps) {
   }, [initialProjects, selectedCategory, searchQuery]);
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#060709] text-white">
+    <section id="projects" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#08090D] text-white">
       {/* Section Header */}
-      <div className="mb-10 text-left">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-[11px] font-mono uppercase tracking-widest text-aleph-sage mb-3 backdrop-blur-md">
-          <Layers className="h-3 w-3 text-aleph-gold" />
+      <div className="mb-10 text-left border-b border-white/[0.08] pb-6">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-zinc-300 mb-3">
+          <Layers className="h-3.5 w-3.5 text-indigo-400" />
           <span>Full Production Index</span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-white">
-              Bento System <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-white via-aleph-champagne to-aleph-gold">Index</span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              All Production Systems ({initialProjects.length})
             </h2>
-            <p className="text-sm text-zinc-400 mt-1 font-normal">
-              Production web applications, headless commerce platforms, and client OS desks.
+            <p className="text-sm text-zinc-400 mt-1">
+              Browse through deployed AI apps, real-time analytics hubs, and high-conversion client platforms.
             </p>
           </div>
-          <span className="text-xs text-zinc-500 font-mono">
-            Displaying {filteredProjects.length} of {initialProjects.length} Systems
-          </span>
+          <div className="text-xs font-mono text-zinc-500">
+            Showing {filteredProjects.length} of {initialProjects.length}
+          </div>
         </div>
       </div>
 
@@ -81,24 +81,30 @@ export function BentoGrid({ initialProjects }: BentoGridProps) {
         totalCount={initialProjects.length}
       />
 
-      {/* Bento Grid */}
-      {filteredProjects.length > 0 ? (
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
-              <BentoCard key={project.id} project={project} index={index} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
-      ) : (
-        <div className="rounded-3xl border border-white/[0.08] bg-[#0c0e12] p-12 text-center backdrop-blur-md">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.03] text-zinc-400 mb-3 border border-white/10">
-            🔍
-          </div>
-          <p className="text-sm font-mono text-zinc-400">No systems matching `{searchQuery}`.</p>
+      {/* Grid of Projects */}
+      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project, index) => (
+            <BentoCard key={project.id} project={project} index={index} />
+          ))}
+        </AnimatePresence>
+      </motion.div>
+
+      {/* Empty State */}
+      {filteredProjects.length === 0 && (
+        <div className="py-20 text-center rounded-2xl border border-dashed border-white/10 bg-white/[0.02]">
+          <p className="text-sm font-mono text-zinc-400 mb-2">
+            No production deployments matching &quot;{searchQuery}&quot;
+          </p>
+          <button
+            onClick={() => {
+              setSelectedCategory("All");
+              setSearchQuery("");
+            }}
+            className="text-xs font-mono text-indigo-400 hover:text-indigo-300 underline"
+          >
+            Clear filters
+          </button>
         </div>
       )}
     </section>
