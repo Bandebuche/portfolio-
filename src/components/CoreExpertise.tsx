@@ -2,66 +2,59 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Bot, BarChart3, Zap, Sparkles, CheckCircle2 } from "lucide-react";
+import { Bot, BarChart3, Zap, Sparkles } from "lucide-react";
 
 export function CoreExpertise() {
   const offerings = [
     {
       id: "ai-apps",
-      icon: <Bot className="h-6 w-6 text-cyan-600 dark:text-cyan-400" />,
-      iconBg: "bg-cyan-500/10 dark:bg-cyan-950/50 border-cyan-500/20 dark:border-cyan-800/60",
-      badge: "Intelligent Workflows",
-      badgeColor: "text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/70 border-cyan-200 dark:border-cyan-800/60",
-      title: "🤖 AI-Powered Websites & Web Apps",
+      icon: <Bot className="h-5 w-5 text-aleph-gold" />,
+      badge: "AI Autonomy & Agents",
+      title: "AI-Powered Systems & Autonomous Agents",
       description:
-        "Custom web apps integrated with LLMs, autonomous agents, RAG search, and smart workflow automation.",
-      tags: ["LLM Integration", "Autonomous Agents", "RAG Pipelines", "FastAPI / Python", "Smart Automation"],
-      gradient: "from-cyan-500/10 via-sky-500/5 to-transparent",
-      borderColor: "hover:border-cyan-500/50 dark:hover:border-cyan-500/50",
+        "Engineered AI workflows integrated with frontier LLMs, multi-agent frameworks, vector search (RAG), and smart automated dispatch engines.",
+      tags: ["Autonomous Agents", "RAG Pipelines", "FastAPI / Python", "Function Calling", "Smart Automation"],
+      accentColor: "border-aleph-gold/30 hover:border-aleph-gold/60",
+      haloGradient: "from-aleph-gold/10 via-transparent to-transparent",
     },
     {
       id: "dashboards",
-      icon: <BarChart3 className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />,
-      iconBg: "bg-emerald-500/10 dark:bg-emerald-950/50 border-emerald-500/20 dark:border-emerald-800/60",
+      icon: <BarChart3 className="h-5 w-5 text-aleph-sage" />,
       badge: "Real-Time Telemetry",
-      badgeColor: "text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/70 border-emerald-200 dark:border-emerald-800/60",
-      title: "📊 Modern Analytics & Admin Dashboards",
+      title: "High-Density Analytics & Operations Consoles",
       description:
-        "High-performance interactive dashboards, real-time data visualization, KPI tracking, and seamless API integrations.",
-      tags: ["Real-Time KPIs", "Interactive Charts", "Admin Panels", "REST / GraphQL", "Speed & Performance"],
-      gradient: "from-emerald-500/10 via-teal-500/5 to-transparent",
-      borderColor: "hover:border-emerald-500/50 dark:hover:border-emerald-500/50",
+        "Sub-second interactive consoles, real-time KPI data streaming, Kanban operations queues, SLA metrics decks, and mission-critical admin hubs.",
+      tags: ["Real-Time KPIs", "Operations OS", "Kanban Triage", "REST & WebSockets", "Sub-Second UX"],
+      accentColor: "border-aleph-sage/30 hover:border-aleph-sage/60",
+      haloGradient: "from-aleph-sage/10 via-transparent to-transparent",
     },
     {
       id: "saas-ecommerce",
-      icon: <Zap className="h-6 w-6 text-amber-600 dark:text-amber-400" />,
-      iconBg: "bg-amber-500/10 dark:bg-amber-950/50 border-amber-500/20 dark:border-amber-800/60",
-      badge: "Full-Cycle Scale",
-      badgeColor: "text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/70 border-amber-200 dark:border-amber-800/60",
-      title: "⚡ SaaS Platforms & E-Commerce",
+      icon: <Zap className="h-5 w-5 text-aleph-champagne" />,
+      badge: "Conversion & SaaS",
+      title: "Scalable SaaS Platforms & Bespoke Funnels",
       description:
-        "End-to-end scalable SaaS engineering, bespoke stores, secure payment gateways, and subscription architecture.",
-      tags: ["SaaS Architecture", "Stripe Checkout", "Headless Shopify", "Custom WordPress", "Sub-Second Delivery"],
-      gradient: "from-amber-500/10 via-orange-500/5 to-transparent",
-      borderColor: "hover:border-amber-500/50 dark:hover:border-amber-500/50",
+        "End-to-end cloud architectures, subscription billing, high-converting webinar registration engines, and custom headless commerce platforms.",
+      tags: ["SaaS Architecture", "Stripe Billing", "Conversion Funnels", "Next.js 14", "Global Scale"],
+      accentColor: "border-aleph-champagne/30 hover:border-aleph-champagne/60",
+      haloGradient: "from-aleph-champagne/10 via-transparent to-transparent",
     },
   ];
 
   return (
-    <section id="expertise" className="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="expertise" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#060709] text-white">
       {/* Section Header */}
-      <div className="mb-10 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div className="mb-12 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          {/* Badge Pill with crisp light & dark mode styles */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-50 dark:bg-cyan-950/40 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-800 dark:text-cyan-300 mb-3 backdrop-blur-md shadow-sm dark:shadow-none">
-            <Sparkles className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400" />
-            <span>Core Expertise • What I Build</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-[11px] font-mono uppercase tracking-widest text-aleph-champagne mb-3 backdrop-blur-md">
+            <Sparkles className="h-3 w-3 text-aleph-gold" />
+            <span>Core Pillars • Engineering Focus</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
-            Engineered for Intelligent Scale
+          <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-white">
+            Architected for <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-white via-aleph-champagne to-aleph-gold">Intelligence & Scale</span>
           </h2>
-          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-1 max-w-xl tracking-tight">
-            Specialized engineering capabilities delivering AI autonomy, high-density analytical dashboards, and conversion-focused SaaS engines.
+          <p className="text-sm text-zinc-400 mt-1 max-w-xl font-normal">
+            Specialized engineering capabilities across generative intelligence, high-density telemetry, and conversion engines.
           </p>
         </div>
       </div>
@@ -76,44 +69,43 @@ export function CoreExpertise() {
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: idx * 0.1 }}
             whileHover={{ y: -4 }}
-            className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-zinc-200/90 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/40 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 shadow-sm hover:shadow-xl dark:shadow-none ${card.borderColor}`}
+            className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0c0e12] p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 shadow-aleph-card hover:shadow-aleph-hover ${card.accentColor}`}
           >
             {/* Ambient Radial Gradient Inside Card */}
             <div
-              className={`pointer-events-none absolute -top-20 -right-20 h-48 w-48 rounded-full bg-gradient-to-br ${card.gradient} blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100`}
+              className={`pointer-events-none absolute -top-20 -right-20 h-44 w-44 rounded-full bg-gradient-to-br ${card.haloGradient} blur-2xl opacity-40 transition-opacity duration-300 group-hover:opacity-80`}
             />
 
             <div>
               {/* Card Header with Icon & Badge */}
               <div className="flex items-center justify-between mb-5">
-                <div className={`flex h-12 w-12 items-center justify-center rounded-2xl border shadow-inner ${card.iconBg}`}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] shadow-inner">
                   {card.icon}
                 </div>
-                <span className={`rounded-full border px-2.5 py-0.5 text-[11px] font-medium tracking-tight backdrop-blur-sm ${card.badgeColor}`}>
+                <span className="text-[10px] font-mono tracking-widest uppercase text-zinc-400 px-2.5 py-1 rounded-full border border-white/[0.06] bg-white/[0.02]">
                   {card.badge}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-lg sm:text-xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2.5">
+              <h3 className="text-lg font-medium tracking-tight text-white mb-2 group-hover:text-aleph-champagne transition-colors">
                 {card.title}
               </h3>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed tracking-tight mb-6">
+              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal mb-5">
                 {card.description}
               </p>
             </div>
 
-            {/* Bullet / Tag Highlights */}
-            <div className="pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex flex-wrap gap-1.5">
-              {card.tags.map((tag) => (
+            {/* Tags Pills */}
+            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/[0.05]">
+              {card.tags.map((tag, tIdx) => (
                 <span
-                  key={tag}
-                  className="inline-flex items-center gap-1 rounded-md bg-zinc-100/90 dark:bg-zinc-950/80 px-2.5 py-1 text-[11px] font-medium tracking-tight text-zinc-700 dark:text-zinc-300 border border-zinc-200/80 dark:border-zinc-800/70"
+                  key={tIdx}
+                  className="rounded-full border border-white/[0.06] bg-white/[0.02] px-2.5 py-0.5 text-[10px] font-mono text-zinc-400"
                 >
-                  <CheckCircle2 className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
-                  <span>{tag}</span>
+                  {tag}
                 </span>
               ))}
             </div>

@@ -4,11 +4,13 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { TechStackSlider } from "@/components/TechStackSlider";
+import { AlephVenturesSlider } from "@/components/AlephVenturesSlider";
 import { CoreExpertise } from "@/components/CoreExpertise";
 import { BentoGrid } from "@/components/BentoGrid";
 import { FloatingDock } from "@/components/FloatingDock";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { AlephCursor } from "@/components/AlephCursor";
 import { DEFAULT_PROFILE } from "@/data/profile";
 import { DEFAULT_PROJECTS } from "@/data/projects";
 import { getStoredProjects } from "@/lib/storage";
@@ -26,37 +28,43 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-slate-50 dark:bg-[#09090b] text-zinc-900 dark:text-zinc-100 selection:bg-emerald-500/30 selection:text-emerald-700 dark:selection:text-emerald-200 font-sans transition-colors duration-200">
-      {/* Background radial gradient mesh */}
+    <div className="relative min-h-screen bg-[#060709] text-zinc-100 selection:bg-aleph-gold/30 selection:text-aleph-champagne font-sans overflow-x-hidden">
+      {/* Interactive mouse ambient spotlight */}
+      <AlephCursor />
+
+      {/* Background ambient radial gradients */}
       <div 
         aria-hidden="true" 
-        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.08),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.06),rgba(255,255,255,0))]" 
+        className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(212,181,127,0.06),transparent_70%)]" 
       />
 
-      {/* Top Navbar */}
+      {/* Fixed Header Navbar */}
       <Navbar profile={DEFAULT_PROFILE} />
 
       {/* Main Content Sections */}
       <main className="relative z-10 flex flex-col">
-        {/* 1. Hero Header */}
+        {/* 1. Hero with Iconic Aleph Morphing Glass Sphere */}
         <HeroSection profile={DEFAULT_PROFILE} />
 
         {/* 2. Infinite Tech Stack Marquee Slider */}
         <TechStackSlider />
 
-        {/* 3. Core Expertise / What I Build Bento Section */}
+        {/* 3. The Signature Aleph Circular Orbit Dial Showcase */}
+        <AlephVenturesSlider projects={projects} />
+
+        {/* 4. Core Engineering Expertise Pillars */}
         <CoreExpertise />
 
-        {/* 3. Bento Project Showcase */}
+        {/* 5. Complete Bento Systems Showcase & Filters */}
         <BentoGrid initialProjects={projects} />
 
-        {/* 3. Call-to-action Banner */}
+        {/* 6. Ecosystem Partnership & Contact Banner */}
         <ContactSection profile={DEFAULT_PROFILE} />
 
-        {/* 4. Footer */}
+        {/* 7. Footer */}
         <Footer profile={DEFAULT_PROFILE} />
 
-        {/* 5. Minimalist Floating Dock */}
+        {/* 8. Minimalist Floating Dock */}
         <FloatingDock socials={DEFAULT_PROFILE.socials} />
       </main>
     </div>

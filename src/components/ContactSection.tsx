@@ -2,8 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MailIcon, ArrowUpRightIcon, LinkedInIcon, WhatsAppIcon, GitHubIcon } from "./Icons";
+import { MailIcon, ArrowUpRightIcon, WhatsAppIcon, GitHubIcon, ResumeIcon } from "./Icons";
 import { Profile } from "@/types/portfolio";
+import { Sparkles } from "lucide-react";
 
 interface ContactSectionProps {
   profile: Profile;
@@ -11,52 +12,42 @@ interface ContactSectionProps {
 
 export function ContactSection({ profile }: ContactSectionProps) {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto bg-[#060709] text-white">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800/80 bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900/60 dark:to-zinc-950/80 p-8 sm:p-12 text-center backdrop-blur-xl shadow-xl dark:shadow-2xl"
+        className="relative overflow-hidden rounded-[2.5rem] border border-white/[0.08] bg-[#0c0e12] p-8 sm:p-14 text-center backdrop-blur-2xl shadow-aleph-card"
       >
         {/* Subtle background glow */}
         <div 
           aria-hidden="true" 
-          className="pointer-events-none absolute -bottom-10 left-1/2 -translate-x-1/2 h-44 w-96 rounded-full bg-emerald-500/10 blur-3xl"
+          className="pointer-events-none absolute -bottom-16 left-1/2 -translate-x-1/2 h-52 w-[480px] rounded-full aleph-halo-ambient blur-3xl opacity-50"
         />
 
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-4">
-          Available for New Projects
-        </span>
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-[11px] font-mono uppercase tracking-widest text-aleph-champagne mb-4 backdrop-blur-md">
+          <Sparkles className="w-3 h-3 text-aleph-gold" />
+          <span>Ecosystem Partnership</span>
+        </div>
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white max-w-2xl mx-auto mb-3">
-          Ready to build your next AI App or Custom Dashboard?
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white max-w-2xl mx-auto mb-4">
+          Ready to engineer your next <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-white via-aleph-champagne to-aleph-gold">AI Venture</span>?
         </h2>
 
-        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-8 tracking-tight">
-          Available for full-cycle AI development, bespoke dashboard engineering, and modern web architectures.
+        <p className="text-sm sm:text-base text-zinc-400 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
+          Available for end-to-end AI application engineering, bespoke high-density dashboards, and conversion-focused web architecture.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
           {/* Start a Project (Primary Mailto) */}
           <a
-            href={`mailto:${profile.email}?subject=Project%20Inquiry%20-%20AI%20App%20/%20Custom%20Dashboard`}
-            className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-md transition-all hover:bg-emerald-400 hover:shadow-lg active:scale-95"
+            href={`mailto:${profile.email}?subject=Venture%20Inquiry%20-%20AI%20App%20/%20Custom%20Dashboard`}
+            className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-xs sm:text-sm font-medium uppercase tracking-wider text-black shadow-lg transition-all hover:bg-aleph-champagne hover:shadow-aleph-gold/30 active:scale-95"
           >
-            <MailIcon className="w-4 h-4 text-zinc-950" />
-            <span>Start a Project</span>
-            <ArrowUpRightIcon className="w-4 h-4" />
-          </a>
-
-          {/* View Resume (Direct Link) */}
-          <a
-            href={profile.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 px-5 py-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200 backdrop-blur-md transition-all hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-95 shadow-sm"
-          >
-            <span>View Resume</span>
-            <ArrowUpRightIcon className="w-4 h-4 text-zinc-500" />
+            <MailIcon className="w-4 h-4 text-black" />
+            <span>Initiate Project</span>
+            <ArrowUpRightIcon className="w-3.5 h-3.5" />
           </a>
 
           {/* WhatsApp Direct */}
@@ -64,10 +55,22 @@ export function ContactSection({ profile }: ContactSectionProps) {
             href={profile.socials.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 px-5 py-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200 backdrop-blur-md transition-all hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-95 shadow-sm"
+            title="Chat on WhatsApp: +91 9168727315"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/20 px-5 py-3.5 text-xs sm:text-sm font-mono uppercase tracking-wider text-emerald-300 backdrop-blur-md transition-all hover:border-emerald-500/60 hover:bg-emerald-900/40 active:scale-95 shadow-sm"
           >
-            <WhatsAppIcon className="w-4 h-4 text-emerald-500" />
+            <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
             <span>WhatsApp (+91 9168727315)</span>
+          </a>
+
+          {/* Resume Direct */}
+          <a
+            href={profile.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3.5 text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-300 backdrop-blur-md transition-all hover:border-white/30 hover:bg-white/[0.08] hover:text-white active:scale-95 shadow-sm"
+          >
+            <ResumeIcon className="w-4 h-4 text-aleph-gold" />
+            <span>View Resume</span>
           </a>
 
           {/* GitHub Profile */}
@@ -75,9 +78,9 @@ export function ContactSection({ profile }: ContactSectionProps) {
             href={profile.socials.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/60 px-5 py-3 text-sm font-semibold text-zinc-800 dark:text-zinc-200 backdrop-blur-md transition-all hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-95 shadow-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3.5 text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-300 backdrop-blur-md transition-all hover:border-white/30 hover:bg-white/[0.08] hover:text-white active:scale-95 shadow-sm"
           >
-            <GitHubIcon className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
+            <GitHubIcon className="w-4 h-4 text-zinc-400" />
             <span>GitHub</span>
           </a>
         </div>

@@ -49,24 +49,24 @@ export function BentoGrid({ initialProjects }: BentoGridProps) {
   }, [initialProjects, selectedCategory, searchQuery]);
 
   return (
-    <section id="projects" className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#060709] text-white">
       {/* Section Header */}
-      <div className="mb-8 text-left">
-        <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/60 px-3 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-3 backdrop-blur-md">
-          <Layers className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
-          <span className="tracking-tight">Selected Engineering Work</span>
+      <div className="mb-10 text-left">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1 text-[11px] font-mono uppercase tracking-widest text-aleph-sage mb-3 backdrop-blur-md">
+          <Layers className="h-3 w-3 text-aleph-gold" />
+          <span>Full Production Index</span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
-              Bento Project Showcase
+            <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-white">
+              Bento System <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-white via-aleph-champagne to-aleph-gold">Index</span>
             </h2>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1 tracking-tight">
-              Production web applications, headless commerce stores, and client platforms.
+            <p className="text-sm text-zinc-400 mt-1 font-normal">
+              Production web applications, headless commerce platforms, and client OS desks.
             </p>
           </div>
           <span className="text-xs text-zinc-500 font-mono">
-            Showing {filteredProjects.length} of {initialProjects.length} Systems
+            Displaying {filteredProjects.length} of {initialProjects.length} Systems
           </span>
         </div>
       </div>
@@ -94,23 +94,11 @@ export function BentoGrid({ initialProjects }: BentoGridProps) {
           </AnimatePresence>
         </motion.div>
       ) : (
-        <div className="rounded-2xl border border-zinc-800/80 bg-zinc-900/20 p-12 text-center backdrop-blur-md">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-800/50 text-zinc-400 mb-3">
+        <div className="rounded-3xl border border-white/[0.08] bg-[#0c0e12] p-12 text-center backdrop-blur-md">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.03] text-zinc-400 mb-3 border border-white/10">
             🔍
           </div>
-          <h3 className="text-base font-semibold text-zinc-200">No matching projects found</h3>
-          <p className="text-xs text-zinc-400 mt-1 max-w-sm mx-auto">
-            Try adjusting your search query or switching categories to explore other systems.
-          </p>
-          <button
-            onClick={() => {
-              setSelectedCategory("All");
-              setSearchQuery("");
-            }}
-            className="mt-4 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-800"
-          >
-            Clear Filters
-          </button>
+          <p className="text-sm font-mono text-zinc-400">No systems matching `{searchQuery}`.</p>
         </div>
       )}
     </section>

@@ -22,7 +22,7 @@ export function CategoryFilter({
 }: CategoryFilterProps) {
   return (
     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
-      {/* Category Pills */}
+      {/* Category Pills in Aleph Swiss Minimalist Typography */}
       <div className="flex flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
         {categories.map((cat) => {
           const isActive = selectedCategory === cat;
@@ -30,34 +30,34 @@ export function CategoryFilter({
             <button
               key={cat}
               onClick={() => onSelectCategory(cat)}
-              className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-all ${
+              className={`rounded-full px-3.5 py-1.5 text-[11px] font-mono uppercase tracking-wider transition-all duration-200 ${
                 isActive
-                  ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-950 shadow-sm"
-                  : "border border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/80 dark:bg-zinc-900/40 text-zinc-600 dark:text-zinc-400 hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/60 hover:text-zinc-900 dark:hover:text-zinc-200"
+                  ? "bg-white text-zinc-950 font-semibold shadow-sm"
+                  : "border border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
               }`}
             >
-              <span className="tracking-tight">{cat}</span>
+              <span>{cat}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Search Bar */}
+      {/* Search Bar in Aleph Dark Glass */}
       <div className="relative min-w-[240px] sm:w-72">
-        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-zinc-400 dark:text-zinc-500">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-zinc-500">
           <SearchIcon className="w-3.5 h-3.5" />
         </div>
         <input
           type="text"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder={`Search ${totalCount} projects...`}
-          className="w-full rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/80 dark:bg-zinc-900/40 py-1.5 pl-9 pr-8 text-xs text-zinc-900 dark:text-zinc-200 placeholder-zinc-500 backdrop-blur-md outline-none transition-all focus:border-zinc-400 dark:focus:border-zinc-700 focus:bg-white dark:focus:bg-zinc-900/80 focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-700"
+          placeholder={`Search ${totalCount} systems...`}
+          className="w-full rounded-full border border-white/10 bg-white/[0.03] py-1.5 pl-9 pr-8 text-xs font-mono text-zinc-200 placeholder-zinc-500 backdrop-blur-md outline-none transition-all focus:border-aleph-gold/50 focus:bg-white/[0.06]"
         />
         {searchQuery && (
           <button
             onClick={() => onSearchChange("")}
-            className="absolute inset-y-0 right-0 flex items-center pr-3 text-xs text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300"
+            className="absolute inset-y-0 right-0 flex items-center pr-3 text-xs text-zinc-500 hover:text-zinc-300"
           >
             ✕
           </button>

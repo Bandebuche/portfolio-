@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 import { GitHubIcon, WhatsAppIcon } from "./Icons";
@@ -13,83 +12,105 @@ interface NavbarProps {
 }
 
 export function Navbar({ profile }: NavbarProps) {
+  const [hoveredNav, setHoveredNav] = useState<string | null>(null);
+
+  const navLinks = [
+    { label: "Ventures", href: "#ventures" },
+    { label: "Showcase", href: "#projects" },
+    { label: "Expertise", href: "#expertise" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
-    <header className="sticky top-0 z-40 w-full pt-safe border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl transition-colors">
+    <header className="fixed top-0 left-0 w-full z-50 pt-safe bg-[#060709]/80 backdrop-blur-xl border-b border-white/[0.06] transition-colors duration-300">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-        {/* Brand / WebTree Logo + Name */}
+        
+        {/* Brand / Aleph Concentric Symbol + Wordmark */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 sm:gap-3 group transition-transform hover:scale-[1.02]"
+          className="flex items-center gap-3 group transition-transform hover:scale-[1.02]"
         >
-          <div className="relative h-9 w-9 sm:h-10 sm:w-10 overflow-hidden rounded-xl border border-cyan-500/40 bg-zinc-950 shadow-[0_0_15px_-3px_rgba(6,182,212,0.35)] transition-all duration-300 group-hover:border-cyan-400 group-hover:shadow-[0_0_22px_rgba(6,182,212,0.55)]">
-            <Image
-              src="/logo.png"
-              alt="WebTree Portfolio Logo"
-              fill
-              sizes="40px"
-              priority
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-            />
+          {/* Aleph Stylized Concentric Circle SVG */}
+          <div className="w-8 h-8 flex items-center justify-center text-aleph-gold group-hover:text-aleph-champagne transition-colors">
+            <svg viewBox="0 0 50 50" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="23" stroke="currentColor" strokeWidth="1.2" opacity="0.3" strokeDasharray="3 3"/>
+              <circle cx="25" cy="25" r="16" stroke="currentColor" strokeWidth="1.5" opacity="0.7"/>
+              <circle cx="25" cy="25" r="8" fill="currentColor" opacity="0.9"/>
+            </svg>
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
-              <span className="text-sm sm:text-base font-extrabold tracking-tight text-zinc-900 dark:text-white">
-                web<span className="text-cyan-500 dark:text-cyan-400">tree</span>
+              <span className="text-sm font-medium tracking-tight text-white font-mono uppercase">
+                webtree<span className="text-aleph-gold font-bold">.ai</span>
               </span>
-              <span className="hidden sm:inline-block h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
-              <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 hidden sm:inline tracking-tight">
+              <span className="hidden sm:inline-block h-1 w-1 rounded-full bg-zinc-700" />
+              <span className="text-xs text-zinc-400 hidden sm:inline font-mono">
                 {profile.name}
               </span>
             </div>
-            <span className="text-[10px] text-zinc-500 dark:text-zinc-400 hidden sm:inline tracking-tight">
-              Full-Stack Engineer & AI Solutions
-            </span>
           </div>
         </Link>
 
-        {/* Right Action Icons: GitHub, WhatsApp, Theme Toggle, Resume */}
-        <div className="flex items-center gap-2 sm:gap-2.5">
-          {/* GitHub Icon Link */}
-          <a
-            href={profile.socials.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub Profile"
-            title="GitHub: Bandebuche"
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/60 text-zinc-700 dark:text-zinc-300 hover:border-zinc-300 dark:hover:border-zinc-700 hover:text-black dark:hover:text-white transition-all hover:scale-105 active:scale-95 shadow-sm"
-          >
-            <GitHubIcon className="h-4 w-4" />
-          </a>
+        {/* Center Nav Links with Aleph Mutual-Dimming Hover Effect */}
+        <nav className="hidden md:flex items-center gap-1 group">
+          {navLinks.map((link) => {
+            const isHovered = hoveredNav === link.label;
+            const isOtherHovered = hoveredNav !== null && !isHovered;
 
-          {/* WhatsApp Icon Link */}
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onMouseEnter={() => setHoveredNav(link.label)}
+                onMouseLeave={() => setHoveredNav(null)}
+                className={`px-3 py-1.5 text-xs font-mono tracking-widest uppercase transition-opacity duration-300 ${
+                  isOtherHovered ? "opacity-30 text-white" : "opacity-90 text-white hover:text-aleph-champagne"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        {/* Right Action Controls: Status, WhatsApp, GitHub, Resume, Theme */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* WhatsApp Direct Chat */}
           <a
             href={profile.socials.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
             title="WhatsApp: +91 9168727315"
-            className="flex items-center gap-1.5 h-9 px-3 rounded-xl border border-emerald-500/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-all hover:scale-105 active:scale-95 shadow-sm"
+            className="hidden sm:flex items-center gap-1.5 h-8 px-3 rounded-full border border-emerald-500/30 bg-emerald-950/30 text-emerald-300 hover:border-emerald-500/60 hover:bg-emerald-900/40 transition-all text-xs font-mono"
           >
-            <WhatsAppIcon className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-            <span className="text-xs font-semibold hidden md:inline tracking-tight">
-              +91 9168727315
-            </span>
+            <WhatsAppIcon className="h-3.5 w-3.5 text-emerald-400" />
+            <span className="text-[11px] font-mono tracking-tight hidden lg:inline">+91 9168727315</span>
           </a>
 
-          {/* Theme Toggle (Dark / Light) */}
-          <ThemeToggle />
-
-          {/* Resume Link */}
+          {/* GitHub Icon */}
           <a
-            href={profile.resumeUrl}
+            href={profile.socials.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1 rounded-xl bg-zinc-900 dark:bg-white px-3.5 py-2 text-xs font-semibold text-white dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all shadow-sm active:scale-95"
+            aria-label="GitHub Profile"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-zinc-400 hover:text-white hover:border-white/30 transition-all"
           >
-            <span>Resume</span>
-            <ArrowUpRight className="h-3.5 w-3.5" />
+            <GitHubIcon className="h-3.5 w-3.5" />
           </a>
+
+          {/* Contact Capsule CTA */}
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3.5 py-1.5 text-[11px] font-mono uppercase tracking-wider text-white hover:bg-white hover:text-black transition-all duration-300"
+          >
+            <span>Get in Touch</span>
+          </a>
+
+          {/* Theme Toggle */}
+          <ThemeToggle />
         </div>
+
       </div>
     </header>
   );

@@ -30,35 +30,35 @@ export function FloatingDock({ socials }: FloatingDockProps) {
       id: "github",
       label: "GitHub",
       href: socials.github,
-      icon: <GitHubIcon className="w-5 h-5" />,
+      icon: <GitHubIcon className="w-4 h-4" />,
       external: true,
     },
     {
       id: "linkedin",
       label: "LinkedIn",
       href: socials.linkedin,
-      icon: <LinkedInIcon className="w-5 h-5" />,
+      icon: <LinkedInIcon className="w-4 h-4" />,
       external: true,
     },
     {
       id: "whatsapp",
       label: "WhatsApp (+91 9168727315)",
       href: socials.whatsapp,
-      icon: <WhatsAppIcon className="w-5 h-5" />,
+      icon: <WhatsAppIcon className="w-4 h-4 text-emerald-400" />,
       external: true,
     },
     {
       id: "email",
       label: "Email",
       href: socials.email,
-      icon: <MailIcon className="w-5 h-5" />,
+      icon: <MailIcon className="w-4 h-4" />,
       external: false,
     },
     {
       id: "resume",
       label: "Resume",
       href: socials.resume,
-      icon: <ResumeIcon className="w-5 h-5" />,
+      icon: <ResumeIcon className="w-4 h-4 text-aleph-gold" />,
       external: true,
     },
   ];
@@ -70,7 +70,7 @@ export function FloatingDock({ socials }: FloatingDockProps) {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="relative flex items-center gap-1.5 sm:gap-2.5 rounded-full border border-zinc-200/90 dark:border-zinc-800/80 bg-white/85 dark:bg-zinc-950/80 px-3.5 py-2 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.15)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.06)] ring-1 ring-zinc-900/5 dark:ring-white/5 transition-colors"
+        className="relative flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/10 bg-[#0c0e12]/80 px-3 py-1.5 backdrop-blur-2xl shadow-[0_15px_40px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.06)] ring-1 ring-white/5"
       >
         {items.map((item) => (
           <div
@@ -84,13 +84,13 @@ export function FloatingDock({ socials }: FloatingDockProps) {
               {hoveredId === item.id && (
                 <motion.div
                   initial={{ opacity: 0, y: 4, scale: 0.95 }}
-                  animate={{ opacity: 1, y: -10, scale: 1 }}
+                  animate={{ opacity: 1, y: -8, scale: 1 }}
                   exit={{ opacity: 0, y: 4, scale: 0.95 }}
                   transition={{ duration: 0.15 }}
-                  className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-2.5 py-0.5 text-[10px] font-medium tracking-tight text-zinc-900 dark:text-zinc-200 shadow-xl backdrop-blur-md"
+                  className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border border-white/15 bg-black/90 px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-widest text-white shadow-xl backdrop-blur-md"
                 >
                   {item.label}
-                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-1.5 w-1.5 rotate-45 border-b border-r border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900" />
+                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-1.5 w-1.5 rotate-45 border-b border-r border-white/15 bg-black/90" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -102,7 +102,7 @@ export function FloatingDock({ socials }: FloatingDockProps) {
               aria-label={item.label}
               whileHover={{ scale: 1.15, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="relative flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full text-zinc-600 dark:text-zinc-400 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800/80 hover:text-black dark:hover:text-white"
+              className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full text-zinc-400 transition-colors hover:bg-white/[0.08] hover:text-white"
             >
               {item.icon}
             </motion.a>

@@ -2,6 +2,58 @@ import { Project } from "@/types/portfolio";
 
 export const DEFAULT_PROJECTS: Project[] = [
   {
+    id: "site-fruffles",
+    name: "Fruffles Thickshakes & Desserts",
+    title: "Fruffles Thickshakes & Desserts",
+    url: "https://fruffles.cc.cd/",
+    description: "Nagpur's premium thickshakes & artisanal desserts digital ordering platform, interactive QSR menu, and live kitchen dispatch engine.",
+    category: "E-Commerce / SaaS",
+    status: "Live",
+    featured: true,
+    tags: ["QSR Platform", "Digital Menu", "FoodTech SaaS", "Next.js", "Online Ordering"],
+    customThumb: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1200&h=630&q=85",
+    clicks: 1950
+  },
+  {
+    id: "site-justfarm",
+    name: "Just Farm Dairy Hingoli",
+    title: "Just Farm Dairy Hingoli",
+    url: "https://justfarm.cc.cd/",
+    description: "Direct-to-consumer farm fresh A2 dairy & Desi Ghee subscription commerce platform straight from rural Hingoli farm to doorstep.",
+    category: "E-Commerce / SaaS",
+    status: "Live",
+    featured: true,
+    tags: ["D2C Commerce", "Dairy Farm", "Desi Ghee", "Subscription", "Delivery SaaS"],
+    customThumb: "https://justfarm.cc.cd/assets/buffalo-milk-farm.jpg",
+    clicks: 1910
+  },
+  {
+    id: "site-supports-desk",
+    name: "Support Desk & Analytics",
+    title: "Support Desk • Query Tracker & Live Analytics",
+    url: "https://supports.cc.cd/",
+    description: "Real-time query tracker, support operations desk, automated SLA escalation queue, and live customer resolution analytics dashboard.",
+    category: "Dashboards",
+    status: "Live",
+    featured: true,
+    tags: ["Live Analytics", "Query Tracker", "SLA Escalation", "Operations OS", "Next.js"],
+    customThumb: "https://supports.cc.cd/logo.png",
+    clicks: 1870
+  },
+  {
+    id: "site-piush-bhandari",
+    name: "Piush Bhandari Executive Showcase",
+    title: "Piush Bhandari — Senior Projects Leader",
+    url: "https://me.piushbhandari.cc.cd/",
+    description: "Executive engineering portfolio for Senior Projects Leader & Water Treatment Specialist. Chemical Engineer, CAPM®, and ISO 9001 Lead Auditor showcase.",
+    category: "AI Web Apps",
+    status: "Live",
+    featured: true,
+    tags: ["Executive Portfolio", "Chemical Engineering", "Water Treatment", "CAPM®", "Next.js"],
+    customThumb: "https://me.piushbhandari.cc.cd/logo.png",
+    clicks: 1820
+  },
+  {
     id: "site-digital-azadi-admin",
     name: "DA Support Admin Console",
     title: "DA Support Ops & SLA Deck",
