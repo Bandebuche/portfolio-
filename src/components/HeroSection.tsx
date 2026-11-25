@@ -93,18 +93,28 @@ export function HeroSection({ profile }: HeroSectionProps) {
           </div>
         </motion.div>
 
-        {/* Primary Target H1: Exact Keyword Match with High Conversion Headline */}
+        {/* Primary Target H1: Exact Keyword Match for 'Sachin Bandebuche' AND 'Website Developer in Nagpur' */}
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-[1.15] sm:leading-[1.1] max-w-4xl mb-5"
+          className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white leading-[1.15] sm:leading-[1.1] max-w-4xl mb-3"
         >
-          Website Developer in Nagpur{" "}
+          Sachin Bandebuche{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-indigo-400 font-bold block mt-1">
-            Crafting Next.js, WordPress & Shopify Solutions
+            Website Developer in Nagpur
           </span>
         </motion.h1>
+
+        {/* Specialization Subtitle */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.18 }}
+          className="mb-5 inline-flex items-center gap-2 text-xs sm:text-sm font-mono text-indigo-300/90 tracking-wide"
+        >
+          <span>Crafting High-Speed Next.js, WordPress & Shopify Solutions</span>
+        </motion.div>
 
         {/* Plain-Text Intro Paragraph for Crawlers and AI Answer Engines */}
         <motion.p
@@ -113,7 +123,7 @@ export function HeroSection({ profile }: HeroSectionProps) {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-base sm:text-lg text-zinc-300 max-w-3xl mx-auto leading-relaxed font-normal mb-8"
         >
-          I am <strong className="text-white font-medium">Sachin Bandebuche</strong>, a freelance website developer based in <strong className="text-white font-medium">Nagpur, Maharashtra, India</strong> with 4+ years of professional experience. I have delivered over <strong className="text-white font-medium">35+ live production websites</strong>, custom Next.js web applications, responsive WordPress business portals, and conversion-focused Shopify e-commerce platforms for clients in Nagpur and across the globe.
+          Welcome to the official portfolio of <strong className="text-white font-medium">Sachin Bandebuche</strong>, an independent freelance <strong className="text-white font-medium">website developer in Nagpur, Maharashtra, India</strong>. With over 4 years of engineering experience and <strong className="text-white font-medium">35+ shipped commercial projects</strong>, I engineer high-performance Next.js web applications, responsive WordPress portals, and conversion-focused Shopify e-commerce platforms designed to rank on Google and scale your business.
         </motion.p>
 
         {/* Action Button Cluster */}

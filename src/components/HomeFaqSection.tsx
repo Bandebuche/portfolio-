@@ -5,9 +5,19 @@ import { FaqSchema } from "./SchemaScripts";
 
 export const HOME_FAQS = [
   {
-    question: "Who is a good website developer in Nagpur for local and global businesses?",
+    question: "Who is Sachin Bandebuche?",
     answer:
-      "Sachin Bandebuche is a top freelance website developer based in Nagpur, Maharashtra with over 4 years of experience and 35+ shipped websites. He develops custom Next.js web applications, responsive WordPress portals, and Shopify e-commerce platforms with sub-second page loads and technical SEO.",
+      "Sachin Bandebuche is a professional freelance website developer and software engineer based in Nagpur, Maharashtra, India. With 4+ years of commercial development experience and 35+ live shipped websites, Sachin specializes in building ultra-fast Next.js web applications, custom WordPress business portals, and high-conversion Shopify e-commerce stores.",
+  },
+  {
+    question: "Who is the best website developer in Nagpur for local and global businesses?",
+    answer:
+      "Sachin Bandebuche is a top-rated freelance website developer based in Nagpur, Maharashtra. He delivers full-stack Next.js web applications, clean WordPress portals with zero plugin bloat, and Shopify e-commerce platforms with sub-second page loads, mobile responsiveness, and high Google search visibility.",
+  },
+  {
+    question: "Why choose Sachin Bandebuche as your website developer in Nagpur?",
+    answer:
+      "Working directly with Sachin Bandebuche gives you 1-on-1 developer communication with zero agency markups, verified sub-1-second Core Web Vitals performance, built-in local SEO to rank for Nagpur keywords, and milestone-based transparent pricing.",
   },
   {
     question: "How much does website development cost in Nagpur?",
@@ -15,7 +25,7 @@ export const HOME_FAQS = [
       "In Nagpur, a standard business website typically costs between ₹10,000 and ₹25,000, an e-commerce store costs ₹25,000 to ₹55,000, and a custom Next.js full-stack web application ranges from ₹40,000 to ₹85,000+. Sachin Bandebuche provides transparent milestone pricing with zero hidden renewal fees.",
   },
   {
-    question: "What web development services do you offer in Nagpur?",
+    question: "What web development services does Sachin Bandebuche offer in Nagpur?",
     answer:
       "Services include: 1) Custom Next.js & React web applications, 2) Clean WordPress websites with zero plugin bloat, 3) Shopify e-commerce store design with Razorpay/UPI, 4) Restaurant digital menus with WhatsApp ordering, 5) Real-time telemetry dashboards, and 6) Local technical SEO for Nagpur rankings.",
   },
@@ -25,7 +35,7 @@ export const HOME_FAQS = [
       "A standard corporate website takes 6 to 10 business days. An e-commerce store with payment gateways and courier integration takes 12 to 18 business days. Complex custom web applications take 3 to 5 weeks.",
   },
   {
-    question: "Can I meet you in-person in Nagpur to discuss my project?",
+    question: "Can I meet Sachin Bandebuche in-person in Nagpur to discuss my project?",
     answer:
       "Yes. Sachin is locally based in Nagpur and available for in-person consultations in Sadar, Dharampeth, Ramdaspeth, Wardha Road, Sitabuldi, and surrounding areas, as well as virtual Google Meet calls.",
   },

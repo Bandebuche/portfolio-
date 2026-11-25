@@ -20,11 +20,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://websitelink.cc.cd"),
   title: {
-    default: "Website Developer in Nagpur | Next.js, WordPress & Shopify - Sachin Bandebuche",
-    template: "%s | Sachin Bandebuche - Nagpur Web Developer",
+    default: "Sachin Bandebuche — Website Developer in Nagpur | Next.js & WordPress",
+    template: "%s | Sachin Bandebuche — Website Developer in Nagpur",
   },
   description:
-    "Looking for a top website developer in Nagpur? Sachin Bandebuche builds fast Next.js, WordPress & Shopify e-commerce sites. Get a free quote today!",
+    "Official portfolio of Sachin Bandebuche, leading freelance website developer in Nagpur. High-speed Next.js web apps, WordPress & Shopify e-commerce development.",
   authors: [{ name: "Sachin Bandebuche", url: "https://websitelink.cc.cd" }],
   creator: "Sachin Bandebuche",
   publisher: "Sachin Bandebuche",
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     canonical: "https://websitelink.cc.cd",
   },
   openGraph: {
-    title: "Website Developer in Nagpur | Next.js, WordPress & Shopify - Sachin Bandebuche",
+    title: "Sachin Bandebuche — Website Developer in Nagpur",
     description:
-      "Freelance website developer in Nagpur crafting high-speed business websites, custom WordPress, Shopify e-commerce, and modern Next.js applications.",
+      "Official website of Sachin Bandebuche, freelance website developer in Nagpur. Specializing in Next.js web applications, custom WordPress, and Shopify e-commerce.",
     url: "https://websitelink.cc.cd",
-    siteName: "Sachin Bandebuche - Website Developer Nagpur",
+    siteName: "Sachin Bandebuche — Website Developer Nagpur",
     locale: "en_IN",
     type: "website",
     images: [
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website Developer in Nagpur | Sachin Bandebuche",
+    title: "Sachin Bandebuche — Website Developer in Nagpur",
     description:
-      "Freelance website developer in Nagpur specializing in Next.js, WordPress, Shopify, and custom AI web applications.",
+      "Freelance website developer in Nagpur crafting high-speed Next.js web apps, custom WordPress & Shopify stores.",
     images: ["/og-image.png"],
     creator: "@sachin_bandebuche",
   },
@@ -90,141 +90,198 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Comprehensive Schema.org JSON-LD for Local Business + Person + ProfessionalService
-  const localBusinessSchema = {
+  // Comprehensive Schema.org Knowledge Graph (Person + ProfessionalService + WebSite)
+  // Perfectly linked for Google Knowledge Graph & Entity Disambiguation for "Sachin Bandebuche" & "Website Developer in Nagpur"
+  const entityKnowledgeGraph = {
     "@context": "https://schema.org",
-    "@type": ["ProfessionalService", "LocalBusiness"],
-    "@id": "https://websitelink.cc.cd/#business",
-    name: "Sachin Bandebuche - Website Developer in Nagpur",
-    alternateName: "Webtree Solutions Nagpur",
-    legalName: "Sachin Bandebuche",
-    url: "https://websitelink.cc.cd",
-    logo: "https://websitelink.cc.cd/logo.png",
-    image: "https://websitelink.cc.cd/og-image.png",
-    description:
-      "Sachin Bandebuche is a professional freelance website developer based in Nagpur, Maharashtra, India. Specialized in custom business websites, Next.js React web applications, WordPress, Shopify, and e-commerce development.",
-    telephone: "+91 9168727315",
-    email: "sachinbandebuche@gmail.com",
-    priceRange: "₹₹ (INR)",
-    currenciesAccepted: "INR, USD, EUR",
-    paymentAccepted: "UPI, Bank Transfer, Card, PayPal",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Nagpur",
-      addressRegion: "Maharashtra",
-      postalCode: "440001",
-      addressCountry: "IN",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 21.1458,
-      longitude: 79.0882,
-    },
-    openingHoursSpecification: [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
+        "@type": "Person",
+        "@id": "https://websitelink.cc.cd/#person",
+        name: "Sachin Bandebuche",
+        givenName: "Sachin",
+        familyName: "Bandebuche",
+        additionalName: "Bandebuche",
+        jobTitle: "Website Developer & Full-Stack Engineer",
+        description:
+          "Sachin Bandebuche is a professional freelance website developer and software engineer based in Nagpur, Maharashtra, India. Specialized in custom Next.js web applications, WordPress websites, and Shopify e-commerce platforms.",
+        url: "https://websitelink.cc.cd",
+        image: "https://websitelink.cc.cd/logo.png",
+        telephone: "+91 9168727315",
+        email: "sachinbandebuche@gmail.com",
+        sameAs: [
+          "https://github.com/Bandebuche",
+          "https://www.linkedin.com/in/sachin-bandebuche-47b1a8257",
+          "https://wa.me/919168727315",
+          "https://sbresume.lovable.app/",
+          "https://instagram.com/sachin.bandebuche_",
+          "https://youtube.com/@sachinbandebuche104",
         ],
-        opens: "09:00",
-        closes: "20:00",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Nagpur",
+          addressRegion: "Maharashtra",
+          postalCode: "440001",
+          addressCountry: "IN",
+        },
+        knowsAbout: [
+          "Sachin Bandebuche",
+          "Website Developer in Nagpur",
+          "Web Development",
+          "Next.js",
+          "React",
+          "WordPress",
+          "Shopify",
+          "E-Commerce Solutions",
+          "Full-Stack Development",
+          "Local SEO Nagpur",
+        ],
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "Website Developer",
+          occupationLocation: {
+            "@type": "City",
+            name: "Nagpur",
+          },
+        },
+        mainEntityOfPage: "https://websitelink.cc.cd",
+      },
+      {
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@id": "https://websitelink.cc.cd/#business",
+        name: "Sachin Bandebuche — Website Developer in Nagpur",
+        alternateName: [
+          "WebTree Solutions Nagpur",
+          "Sachin Bandebuche Web Developer",
+          "Best Website Developer Nagpur",
+        ],
+        legalName: "Sachin Bandebuche",
+        url: "https://websitelink.cc.cd",
+        logo: "https://websitelink.cc.cd/logo.png",
+        image: "https://websitelink.cc.cd/og-image.png",
+        description:
+          "Sachin Bandebuche provides premium freelance website development services in Nagpur, Maharashtra, India. Custom business websites, Next.js applications, responsive WordPress portals, and Shopify online stores.",
+        telephone: "+91 9168727315",
+        email: "sachinbandebuche@gmail.com",
+        priceRange: "₹₹ (INR)",
+        currenciesAccepted: "INR, USD, EUR",
+        paymentAccepted: "UPI, Bank Transfer, Card, PayPal",
+        founder: {
+          "@id": "https://websitelink.cc.cd/#person",
+        },
+        employee: {
+          "@id": "https://websitelink.cc.cd/#person",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Nagpur",
+          addressRegion: "Maharashtra",
+          postalCode: "440001",
+          addressCountry: "IN",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 21.1458,
+          longitude: 79.0882,
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ],
+            opens: "09:00",
+            closes: "20:00",
+          },
+        ],
+        areaServed: [
+          {
+            "@type": "City",
+            name: "Nagpur",
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Maharashtra",
+          },
+          {
+            "@type": "Country",
+            name: "India",
+          },
+        ],
+        sameAs: [
+          "https://github.com/Bandebuche",
+          "https://www.linkedin.com/in/sachin-bandebuche-47b1a8257",
+          "https://wa.me/919168727315",
+          "https://sbresume.lovable.app/",
+          "https://instagram.com/sachin.bandebuche_",
+          "https://youtube.com/@sachinbandebuche104",
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Website Development Services in Nagpur",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Custom Website Development in Nagpur",
+                description: "High-performance business websites using Next.js 14 and React.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "WordPress Development in Nagpur",
+                description: "Custom WordPress themes, Elementor setup, and WooCommerce stores.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Shopify E-Commerce Development in Nagpur",
+                description: "High-converting Shopify online stores with Indian payment gateway integration.",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "E-Commerce Website Development in Nagpur",
+                description: "Full-stack e-commerce platforms with cart, inventory, and logistics integration.",
+              },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://websitelink.cc.cd/#website",
+        url: "https://websitelink.cc.cd",
+        name: "Sachin Bandebuche — Website Developer in Nagpur",
+        alternateName: "Sachin Bandebuche Portfolio & Web Development Services",
+        description: "Official portfolio and web development services by Sachin Bandebuche in Nagpur, India.",
+        publisher: {
+          "@id": "https://websitelink.cc.cd/#business",
+        },
+        author: {
+          "@id": "https://websitelink.cc.cd/#person",
+        },
+        creator: {
+          "@id": "https://websitelink.cc.cd/#person",
+        },
+        about: {
+          "@id": "https://websitelink.cc.cd/#person",
+        },
+        inLanguage: "en-IN",
       },
     ],
-    areaServed: [
-      {
-        "@type": "City",
-        name: "Nagpur",
-      },
-      {
-        "@type": "AdministrativeArea",
-        name: "Maharashtra",
-      },
-      {
-        "@type": "Country",
-        name: "India",
-      },
-    ],
-    sameAs: [
-      "https://github.com/Bandebuche",
-      "https://www.linkedin.com/in/sachin-bandebuche-47b1a8257",
-      "https://wa.me/919168727315",
-      "https://sbresume.lovable.app/",
-      "https://instagram.com/sachin.bandebuche_",
-      "https://youtube.com/@sachinbandebuche104",
-    ],
-    founder: {
-      "@type": "Person",
-      "@id": "https://websitelink.cc.cd/#person",
-      name: "Sachin Bandebuche",
-      jobTitle: "Freelance Website Developer & Full-Stack Engineer",
-      url: "https://websitelink.cc.cd",
-      sameAs: [
-        "https://github.com/Bandebuche",
-        "https://www.linkedin.com/in/sachin-bandebuche-47b1a8257",
-      ],
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Nagpur",
-        addressRegion: "Maharashtra",
-        addressCountry: "IN",
-      },
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Website Development Services in Nagpur",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Custom Website Development in Nagpur",
-            description: "High-performance business websites using Next.js 14 and React.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "WordPress Development in Nagpur",
-            description: "Custom WordPress themes, Elementor setup, and WooCommerce stores.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Shopify E-Commerce Development in Nagpur",
-            description: "High-converting Shopify online stores with Indian payment gateway integration.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "E-Commerce Website Development in Nagpur",
-            description: "Full-stack e-commerce platforms with cart, inventory, and logistics integration.",
-          },
-        },
-      ],
-    },
-  };
-
-  const webSiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://websitelink.cc.cd/#website",
-    url: "https://websitelink.cc.cd",
-    name: "Sachin Bandebuche — Website Developer in Nagpur",
-    description: "Portfolio and web development services by Sachin Bandebuche in Nagpur, India.",
-    publisher: {
-      "@id": "https://websitelink.cc.cd/#business",
-    },
-    inLanguage: "en-IN",
   };
 
   return (
@@ -232,11 +289,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(entityKnowledgeGraph) }}
         />
       </head>
       <body className="bg-[#08090D] text-zinc-100 antialiased selection:bg-indigo-600/30 selection:text-white transition-colors duration-200">
