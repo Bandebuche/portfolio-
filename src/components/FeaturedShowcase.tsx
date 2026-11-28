@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "@/types/portfolio";
-import { ArrowUpRight, Globe, Lock, ExternalLink, Sparkles, CheckCircle2, FileText } from "lucide-react";
+import { ArrowUpRight, ArrowUp, Globe, Lock, ExternalLink, Sparkles, CheckCircle2, FileText } from "lucide-react";
 
 interface FeaturedShowcaseProps {
   projects: Project[];
@@ -15,6 +15,29 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
   // Get top 6 featured projects (including the 4 new ones: fruffles, justfarm, supports, piushbhandari)
   const featured = projects.slice(0, 6);
   const [imgError, setImgError] = useState<{ [id: string]: boolean }>({});
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  // Monitor scroll position to show floating back-to-top button on the right side
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 320) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const caseStudyMap: { [id: string]: string } = {
     "site-fruffles": "/projects/fruffles",
@@ -182,7 +205,46 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
           })}
         </div>
 
+        {/* Bottom Section Quick Bar with Top Navigation */}
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between border-t border-white/[0.08] pt-6 gap-3">
+          <span className="text-xs font-mono text-zinc-500">
+            6 of 35+ flagship ventures showcased • High-Availability Silicon Valley Stack
+          </span>
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-indigo-400 hover:text-white transition-colors"
+          >
+            <ArrowUp className="w-3.5 h-3.5" />
+            <span>Back to Top / ऊपर जाएँ</span>
+          </button>
+        </div>
+
       </div>
+
+      {/* Floating Right-Side Scroll-To-Top Button (Appears smoothly when scrolling down) */}
+      <AnimatePresence>
+        {showTopBtn && (
+          <motion.button
+            type="button"
+            onClick={scrollToTop}
+            initial={{ opacity: 0, scale: 0.75, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.75, y: 20 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            aria-label="Scroll directly to top of page"
+            className="fixed bottom-6 right-5 sm:bottom-8 sm:right-8 z-50 group flex items-center gap-2 rounded-full border border-indigo-500/40 bg-[#0c0e14]/90 px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs font-mono font-semibold text-white shadow-[0_12px_35px_rgba(0,0,0,0.85),0_0_20px_rgba(99,102,241,0.3)] backdrop-blur-2xl hover:border-indigo-400 hover:bg-indigo-600 hover:shadow-[0_15px_40px_rgba(99,102,241,0.55)] transition-all duration-300 active:scale-95"
+            title="Go to top / सीधे ऊपर ले जाएँ"
+          >
+            <div className="flex items-center justify-center w-5 h-5 rounded-full bg-indigo-500/20 group-hover:bg-white/20 transition-colors">
+              <ArrowUp className="w-3.5 h-3.5 text-indigo-300 group-hover:text-white transition-transform group-hover:-translate-y-0.5" />
+            </div>
+            <span className="text-[11px] font-mono tracking-wider text-zinc-300 group-hover:text-white uppercase font-bold">
+              Top
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
