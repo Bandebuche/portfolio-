@@ -2,6 +2,7 @@ export interface ScreenshotSection {
   title: string;
   subtitle: string;
   image: string;
+  caption?: string;
   highlights: string[];
 }
 
@@ -136,6 +137,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "1. 📊 Live Analytics & KPI Dashboard",
         subtitle: "Full-featured analytics showing real-time query metrics, agent allocation, categorization breakdowns, and hourly trends.",
         image: "/projects/supports-desk/01_Analytics_Dashboard.png",
+        caption: "01 - Live Analytics Dashboard",
         highlights: [
           "Real-time KPIs: Total Queries (19), Today's Volume, Active Inquiries, and Agent Assignment breakdown.",
           "Interactive charts: Category breakdown (PMP, Gold, Diamond, Silver), Agent workload split, and Hourly submission flow.",
@@ -146,6 +148,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "2. 📝 Student Inquiry Entry Form & 3D Interactive Ticket Preview",
         subtitle: "The core query logging interface featuring English-only labels, optional Email, Phone/WhatsApp fields, and live interactive 3D Ticket preview.",
         image: "/projects/supports-desk/02_Query_Entry_Form_and_Ticket.png",
+        caption: "02 - Student Query Entry Form and 3D Ticket",
         highlights: [
           "Clean English input fields: Student Name, Phone / WhatsApp (10 digits), Email ID (Optional), Query Description.",
           "Standardized Membership selection: Gold, Diamond, Silver, PMP, and Chakravyuh.",
@@ -157,6 +160,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "3. 🗂️ Records Database — Card & Box View",
         subtitle: "Grid view designed for fast visual scanning of student inquiries with quick action filters and search.",
         image: "/projects/supports-desk/03_Records_Database_Card_View.png",
+        caption: "03 - Records Database Card View",
         highlights: [
           "Filter chips by category (All, PMP, Chakravyuh, Gold, Diamond, Silver) and Assigned Staff (Sachin, Pragati).",
           "Search by Student Name or Query keyword in real-time.",
@@ -167,6 +171,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "4. 📋 Records Database — Tabular List View",
         subtitle: "Dense tabular data grid providing structured row-level tracking with export and sorting features.",
         image: "/projects/supports-desk/04_Records_Database_Table_View.png",
+        caption: "04 - Records Database Table View",
         highlights: [
           "Complete column representation: Student Name, Contact Details (Phone + Email), Category badge, Query description, Submission Date/Time, and Assigned Handler.",
           "Alternating row styling with hover illumination.",
@@ -177,6 +182,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: "5. 📑 Connected Google Sheets Database",
         subtitle: "The live backend spreadsheet database syncing every web app submission seamlessly.",
         image: "/projects/supports-desk/05_Google_Sheet_Database.png",
+        caption: "05 - Google Sheet Database",
         highlights: [
           "8 Structured columns: Timestamp, Name, Phone, Email, Category, Query, Typing Time, Assigned By.",
           "Fully integrated with Google Apps Script doPost / doGet API.",
