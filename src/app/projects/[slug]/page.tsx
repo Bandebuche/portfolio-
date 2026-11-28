@@ -202,7 +202,7 @@ export default function CaseStudyPage({ params }: Props) {
                   <span>Production Visual Documentation & Telemetry</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-                  🌟 {study.slug === "supports-desk" ? "Student Support Desk & Analytics Portfolio Showcase" : `${study.title} Portfolio Showcase`}
+                  🌟 {study.slug.startsWith("digital-azadi") ? "Digital Azadi Support System — Complete Dashboard Portfolio Showcase" : (study.slug === "supports-desk" ? "Student Support Desk & Analytics Portfolio Showcase" : `${study.title} Portfolio Showcase`)}
                 </h2>
                 <p className="text-sm text-zinc-300 leading-relaxed mb-4 max-w-3xl">
                   A complete portfolio showcase containing high-resolution screenshots of the entire working system. Since the live application requires login credentials, these screenshots document every interface, operational feature, and real-time backend synchronization.
@@ -210,7 +210,7 @@ export default function CaseStudyPage({ params }: Props) {
                 <div className="p-3.5 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-200 text-xs sm:text-sm font-sans flex items-start gap-3">
                   <span className="text-base shrink-0">🔒</span>
                   <p className="leading-relaxed">
-                    <strong>Operational Notice:</strong> Full production interface documentation. All operational dashboards, ticket workflows, and bi-directional Google Sheet connections are captured below at 1920×1080 resolution.
+                    <strong>Operational Notice:</strong> Full production interface documentation. All operational dashboards, ticket workflows, and bi-directional Google Sheet connections are captured below in high resolution.
                   </p>
                 </div>
               </div>

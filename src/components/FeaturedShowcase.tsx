@@ -21,6 +21,8 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
     "site-justfarm": "/projects/justfarm",
     "site-supports-desk": "/projects/supports-desk",
     "site-piush-bhandari": "/projects/piush-bhandari",
+    "site-digital-azadi-support": "/projects/digital-azadi-support",
+    "site-digital-azadi-admin": "/projects/digital-azadi-admin",
   };
 
   const getCleanDomain = (url: string) => {

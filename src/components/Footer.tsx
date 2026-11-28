@@ -100,6 +100,16 @@ export function Footer({ profile }: FooterProps) {
                 </Link>
               </li>
               <li>
+                <Link href="/projects/digital-azadi-support" className="hover:text-white transition-colors">
+                  • Digital Azadi Support (Public Portal)
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects/digital-azadi-admin" className="hover:text-white transition-colors">
+                  • DA Support Ops (SLA Deck)
+                </Link>
+              </li>
+              <li>
                 <Link href="/projects/piush-bhandari" className="hover:text-white transition-colors">
                   • Piush Bhandari (Executive Bio)
                 </Link>

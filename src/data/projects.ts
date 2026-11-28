@@ -63,7 +63,7 @@ export const DEFAULT_PROJECTS: Project[] = [
     status: "Live",
     featured: true,
     tags: ["Admin Console", "Kanban Queue", "SLA Analytics", "Real-Time Telemetry"],
-    customThumb: "https://digital-azadi-support.vercel.app/digital-azadi-logo.png",
+    customThumb: "/projects/digital-azadi-support/04_super_admin_operations_table_view.png",
     clicks: 1890
   },
   {
@@ -76,7 +76,7 @@ export const DEFAULT_PROJECTS: Project[] = [
     status: "Live",
     featured: true,
     tags: ["Support Portal", "Ticket Dispatch", "React", "Operations OS"],
-    customThumb: "https://digital-azadi-support.vercel.app/digital-azadi-logo.png",
+    customThumb: "/projects/digital-azadi-support/01_public_ticket_submission_form.png",
     clicks: 1750
   },
   {
