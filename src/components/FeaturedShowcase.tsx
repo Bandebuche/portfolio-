@@ -99,10 +99,20 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-card hover:border-indigo-500/40 hover:bg-surface-cardHover transition-all duration-300 shadow-tech-card hover:shadow-tech-hover"
+                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-card hover:border-indigo-500/40 hover:bg-surface-cardHover transition-all duration-300 shadow-tech-card hover:shadow-tech-hover cursor-pointer"
               >
+                {/* Full-Box Clickable Overlay — opens live website in a new tab while preserving current portfolio */}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${project.title} live website in new tab (${cleanUrl})`}
+                  title={`Visit ${project.title} (${cleanUrl}) in new tab`}
+                  className="absolute inset-0 z-10 cursor-pointer"
+                />
+
                 {/* macOS Style Window Header Bar */}
-                <div className="flex items-center justify-between border-b border-white/[0.07] bg-surface-elevated/70 px-4 py-3">
+                <div className="relative z-0 flex items-center justify-between border-b border-white/[0.07] bg-surface-elevated/70 px-4 py-3">
                   {/* Traffic Light Window Controls */}
                   <div className="flex items-center gap-2">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]/80" />
@@ -124,7 +134,7 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
                 </div>
 
                 {/* Card Body & Preview */}
-                <div className="p-5 sm:p-6 flex flex-col flex-grow justify-between">
+                <div className="relative z-0 p-5 sm:p-6 flex flex-col flex-grow justify-between">
                   <div>
                     {/* Visual Preview / Thumbnail Banner */}
                     <div className="relative mb-5 h-48 sm:h-56 w-full overflow-hidden rounded-xl border border-white/[0.06] bg-black/60 group-hover:border-white/15 transition-all">
@@ -174,7 +184,7 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
                       ))}
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 relative z-20">
                       {/* Launch Live App Button */}
                       <a
                         href={project.url}
@@ -190,6 +200,7 @@ export function FeaturedShowcase({ projects }: FeaturedShowcaseProps) {
                       {caseStudyUrl && (
                         <Link
                           href={caseStudyUrl}
+                          onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 px-3.5 py-2.5 text-xs font-mono text-indigo-300 transition-colors"
                         >
                           <FileText className="w-3.5 h-3.5 text-indigo-400" />

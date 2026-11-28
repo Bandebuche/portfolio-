@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Project } from "@/types/portfolio";
-import { ArrowUpRight, Globe, Lock } from "lucide-react";
+import { ArrowUpRight, Globe } from "lucide-react";
 
 interface BentoCardProps {
   project: Project;
@@ -32,10 +32,20 @@ export function BentoCard({ project, index }: BentoCardProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.35, delay: Math.min(index * 0.02, 0.2) }}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/[0.08] bg-surface-card p-5 hover:border-indigo-500/40 hover:bg-surface-cardHover transition-all duration-200 shadow-tech-card hover:shadow-tech-hover"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/[0.08] bg-surface-card p-5 hover:border-indigo-500/40 hover:bg-surface-cardHover transition-all duration-200 shadow-tech-card hover:shadow-tech-hover cursor-pointer"
     >
-      <div>
-        {/* Top Header: Favicon/Icon + Domain + External Link */}
+      {/* Full-Box Clickable Overlay — opens the live website in a new tab while current site stays untouched */}
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open ${project.title} live website in new tab (${domain})`}
+        title={`Visit ${project.title} (${domain}) in new tab`}
+        className="absolute inset-0 z-10 cursor-pointer"
+      />
+
+      <div className="relative z-0">
+        {/* Top Header: Favicon/Icon + Domain + External Link Icon */}
         <div className="flex items-center justify-between gap-3 mb-3.5">
           <div className="flex items-center gap-2.5 min-w-0">
             {/* Thumbnail / Favicon Box */}
@@ -69,16 +79,13 @@ export function BentoCard({ project, index }: BentoCardProps) {
             </div>
           </div>
 
-          {/* External Link Button */}
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Open ${project.title}`}
-            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/20 hover:bg-white hover:text-black transition-all"
+          {/* External Link Indicator Icon */}
+          <div
+            aria-hidden="true"
+            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-zinc-400 group-hover:border-indigo-500/50 group-hover:bg-indigo-600 group-hover:text-white transition-all"
           >
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </div>
         </div>
 
         {/* Project Title */}
@@ -93,7 +100,7 @@ export function BentoCard({ project, index }: BentoCardProps) {
       </div>
 
       {/* Footer: Tags & Status */}
-      <div className="flex items-center justify-between gap-2 pt-3 border-t border-white/[0.06]">
+      <div className="relative z-0 flex items-center justify-between gap-2 pt-3 border-t border-white/[0.06]">
         <div className="flex flex-wrap items-center gap-1 overflow-hidden h-6">
           {project.tags.slice(0, 2).map((tag, tagIdx) => (
             <span
