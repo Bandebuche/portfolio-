@@ -1,3 +1,10 @@
+export interface ScreenshotSection {
+  title: string;
+  subtitle: string;
+  image: string;
+  highlights: string[];
+}
+
 export interface CaseStudy {
   slug: string;
   title: string;
@@ -12,6 +19,7 @@ export interface CaseStudy {
   solution: string;
   techStack: string[];
   keyFeatures: string[];
+  screenshots?: ScreenshotSection[];
   // Placeholders for user to fill as requested
   metricsPlaceholder: string[];
   testimonialPlaceholder: {
@@ -92,36 +100,100 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: "supports-desk",
-    title: "Support Desk • Real-Time Query Tracker & Live Operations Analytics",
-    subtitle: "Enterprise support operations console, ticket triage queue, and SLA escalation dashboard.",
-    client: "Support Desk OS",
+    title: "Support Desk • Query Tracker & Live Analytics",
+    subtitle: "Enterprise support operations console, live 3D ticket preview, dual Card/Table records database, and connected Google Sheets analytics engine.",
+    client: "Student Support Desk & Operations",
     location: "Nagpur / India",
     category: "Dashboards & Web Applications",
     url: "https://supports.cc.cd/",
     liveDomain: "supports.cc.cd",
-    customThumb: "https://supports.cc.cd/logo.png",
+    customThumb: "/projects/supports-desk/01_Analytics_Dashboard.png",
     problem:
-      "Customer support teams were struggling with scattered ticket communications across email and WhatsApp, missing SLA resolution windows and lacking visibility into team resolution metrics.",
+      "Student support and operations teams were facing high inquiry volumes with scattered communications, slow manual ticket logging, and zero real-time visibility into agent allocation, category trends, and response times. Because the live production console requires internal staff credentials, public visitors and stakeholders could not view the internal workflows and real-time dashboard capabilities.",
     solution:
-      "Architected a high-density operations console with real-time ticket categorization, priority badges, automated SLA breach countdown timers, and live agent resolution analytics.",
-    techStack: ["Next.js 14", "TypeScript", "Tailwind CSS", "WebSockets", "Supabase PostgreSQL"],
+      "Engineered a high-performance Student Support Operations Desk featuring a 3D interactive inquiry entry form with holographic ticket preview, dual visual database views (Interactive Card Grid and dense Tabular List), seamless bi-directional synchronization with Google Sheets API, and a real-time analytics KPI dashboard tracking submission volume, agent workload, and hourly traffic flow.",
+    techStack: [
+      "Next.js 14",
+      "React 18",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Google Apps Script API",
+      "Google Sheets Database",
+      "Lucide Icons",
+    ],
     keyFeatures: [
-      "Sub-second live ticket queue streaming",
-      "Kanban triage and ticket assignment board",
-      "Automated SLA escalation thresholds and notifications",
-      "Live agent resolution speed telemetry widgets",
-      "Role-based authentication and secure session state",
+      "Live Analytics & KPI Dashboard with hourly trends and category breakdown",
+      "3D Interactive Student Query Ticket with real-time input mirroring",
+      "Standardized Membership tier classification (PMP, Gold, Diamond, Silver, Chakravyuh)",
+      "Dual-view Records Database: Card Box view for rapid visual scanning & dense Table view",
+      "Automated Bi-directional sync with Google Sheets backend via Google Apps Script API",
+      "Direct staff assignment and real-time agent workload balancing (Sachin, Pragati)",
+      "Strict 10-digit phone validation, optional email handling, and quick 'Set to Now' time-pickers",
+    ],
+    screenshots: [
+      {
+        title: "1. 📊 Live Analytics & KPI Dashboard",
+        subtitle: "Full-featured analytics showing real-time query metrics, agent allocation, categorization breakdowns, and hourly trends.",
+        image: "/projects/supports-desk/01_Analytics_Dashboard.png",
+        highlights: [
+          "Real-time KPIs: Total Queries (19), Today's Volume, Active Inquiries, and Agent Assignment breakdown.",
+          "Interactive charts: Category breakdown (PMP, Gold, Diamond, Silver), Agent workload split, and Hourly submission flow.",
+          "Quick date filtering and one-click refresh synced to Google Sheets.",
+        ],
+      },
+      {
+        title: "2. 📝 Student Inquiry Entry Form & 3D Interactive Ticket Preview",
+        subtitle: "The core query logging interface featuring English-only labels, optional Email, Phone/WhatsApp fields, and live interactive 3D Ticket preview.",
+        image: "/projects/supports-desk/02_Query_Entry_Form_and_Ticket.png",
+        highlights: [
+          "Clean English input fields: Student Name, Phone / WhatsApp (10 digits), Email ID (Optional), Query Description.",
+          "Standardized Membership selection: Gold, Diamond, Silver, PMP, and Chakravyuh.",
+          "Custom Typing Time picker with white calendar icon and 'Set to Now' quick button.",
+          "Dynamic 3D support ticket on the right displaying live input mirror with holographic badge.",
+        ],
+      },
+      {
+        title: "3. 🗂️ Records Database — Card & Box View",
+        subtitle: "Grid view designed for fast visual scanning of student inquiries with quick action filters and search.",
+        image: "/projects/supports-desk/03_Records_Database_Card_View.png",
+        highlights: [
+          "Filter chips by category (All, PMP, Chakravyuh, Gold, Diamond, Silver) and Assigned Staff (Sachin, Pragati).",
+          "Search by Student Name or Query keyword in real-time.",
+          "Structured card tags for phone numbers, email IDs, timestamps, and assigned agent.",
+        ],
+      },
+      {
+        title: "4. 📋 Records Database — Tabular List View",
+        subtitle: "Dense tabular data grid providing structured row-level tracking with export and sorting features.",
+        image: "/projects/supports-desk/04_Records_Database_Table_View.png",
+        highlights: [
+          "Complete column representation: Student Name, Contact Details (Phone + Email), Category badge, Query description, Submission Date/Time, and Assigned Handler.",
+          "Alternating row styling with hover illumination.",
+          "View switchers between Card Grid and Tabular List.",
+        ],
+      },
+      {
+        title: "5. 📑 Connected Google Sheets Database",
+        subtitle: "The live backend spreadsheet database syncing every web app submission seamlessly.",
+        image: "/projects/supports-desk/05_Google_Sheet_Database.png",
+        highlights: [
+          "8 Structured columns: Timestamp, Name, Phone, Email, Category, Query, Typing Time, Assigned By.",
+          "Fully integrated with Google Apps Script doPost / doGet API.",
+          "Accurate data column mapping preserving optional emails and 10-digit phone numbers.",
+        ],
+      },
     ],
     metricsPlaceholder: [
-      "[METRIC PLACEHOLDER: Insert ticket resolution time improvement, e.g. 45% reduction in average ticket resolution time]",
-      "[METRIC PLACEHOLDER: Insert SLA compliance rate, e.g. 99.4% SLA adherence achieved within 30 days]",
-      "[METRIC PLACEHOLDER: Insert daily ticket volume handled, e.g. 2,000+ daily inquiries processed smoothly]",
+      "[METRIC PLACEHOLDER: Insert query resolution time improvement, e.g. 50% faster ticket logging and triage]",
+      "[METRIC PLACEHOLDER: Insert daily volume processed, e.g. 500+ daily student inquiries smoothly synchronized to Google Sheets]",
+      "[METRIC PLACEHOLDER: Insert SLA or response improvement, e.g. 99.8% Google Sheet API uptime and zero lost submissions]",
     ],
     testimonialPlaceholder: {
       quote:
-        "[TESTIMONIAL PLACEHOLDER: Insert quote from operations lead, e.g. 'The speed and clarity of this dashboard transformed our support team. We resolve tickets twice as fast now.']",
-      author: "[Operations Manager]",
-      role: "Lead, Customer Operations",
+        "[TESTIMONIAL PLACEHOLDER: Insert quote from operations lead, e.g. 'The 3D interactive ticket and instant Google Sheets sync completely eliminated our student query backlog. Highly reliable system.']",
+      author: "[Operations Lead / Support Manager]",
+      role: "Head of Student Support Operations",
     },
   },
   {

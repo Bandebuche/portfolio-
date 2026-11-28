@@ -32,12 +32,12 @@ export const DEFAULT_PROJECTS: Project[] = [
     name: "Support Desk & Analytics",
     title: "Support Desk • Query Tracker & Live Analytics",
     url: "https://supports.cc.cd/",
-    description: "Real-time query tracker, support operations desk, automated SLA escalation queue, and live customer resolution analytics dashboard.",
+    description: "Student support operations desk, 3D interactive query ticket logger, dual-view records database (Card & Table), Google Sheets API sync, and live analytics KPI dashboard.",
     category: "Dashboards",
     status: "Live",
     featured: true,
-    tags: ["Live Analytics", "Query Tracker", "SLA Escalation", "Operations OS", "Next.js"],
-    customThumb: "https://supports.cc.cd/logo.png",
+    tags: ["Live Analytics", "Query Tracker", "3D Ticket Preview", "Google Sheets Sync", "Next.js"],
+    customThumb: "/projects/supports-desk/01_Analytics_Dashboard.png",
     clicks: 1870
   },
   {

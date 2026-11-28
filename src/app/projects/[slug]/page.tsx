@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import { DEFAULT_PROFILE } from "@/data/profile";
 import { Breadcrumbs } from "@/components/Breadcrumb";
 import { CASE_STUDIES, CaseStudy } from "@/data/caseStudies";
-import { ArrowUpRight, CheckCircle2, Globe, MapPin, Tag, Terminal, MessageSquare, ArrowLeft } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Globe, MapPin, Tag, Terminal, MessageSquare, ArrowLeft, Sparkles, Layers } from "lucide-react";
 
 interface Props {
   params: { slug: string };
@@ -192,6 +192,92 @@ export default function CaseStudyPage({ params }: Props) {
               ))}
             </ul>
           </section>
+
+          {/* Visual Showcase: High-Resolution Screenshots & Operational Architecture */}
+          {study.screenshots && study.screenshots.length > 0 && (
+            <section className="space-y-8 rounded-2xl border border-white/[0.08] bg-surface-card p-6 sm:p-8">
+              <div className="border-b border-white/[0.08] pb-6">
+                <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3.5 py-1 text-xs font-mono uppercase tracking-wider text-indigo-300 mb-3">
+                  <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Interactive System Walkthrough & Feature Showcase</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                  Production Interfaces & Live Workflows
+                </h2>
+                <div className="p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-200 text-xs sm:text-sm font-sans flex items-start gap-3">
+                  <span className="text-base shrink-0">🔒</span>
+                  <p className="leading-relaxed">
+                    <strong>Operational Note:</strong> Since the live production application is protected behind team authentication, this visual showcase documents every interface, operational feature, and real-time backend synchronization.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-12">
+                {study.screenshots.map((screen, idx) => (
+                  <div
+                    key={idx}
+                    className="group rounded-2xl border border-white/[0.08] bg-black/40 overflow-hidden hover:border-indigo-500/40 transition-all duration-300 shadow-xl"
+                  >
+                    {/* Module Title Header */}
+                    <div className="p-5 sm:p-6 border-b border-white/[0.06] bg-white/[0.02]">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-2.5 py-0.5 rounded-full border border-indigo-500/40 bg-indigo-500/20 text-[11px] font-mono text-indigo-300 font-semibold">
+                          MODULE 0{idx + 1}
+                        </span>
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5">
+                        {screen.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed italic">
+                        {screen.subtitle}
+                      </p>
+                    </div>
+
+                    {/* Image Preview Container in macOS Style Browser Frame */}
+                    <div className="relative border-b border-white/[0.06] bg-zinc-950">
+                      {/* Window Controls */}
+                      <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/[0.04] bg-white/[0.02]">
+                        <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                        <span className="text-[11px] font-mono text-zinc-500 ml-2 truncate">
+                          {screen.title.replace(/^[^a-zA-Z0-9]+/, "")}
+                        </span>
+                      </div>
+
+                      <div className="relative w-full aspect-[16/9] sm:aspect-[16/10] overflow-hidden bg-black/60">
+                        <Image
+                          src={screen.image}
+                          alt={`${screen.title} - ${study.title}`}
+                          fill
+                          sizes="(max-width: 896px) 100vw, 896px"
+                          className="object-contain sm:object-cover object-top hover:scale-[1.01] transition-transform duration-500"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Key Highlights */}
+                    <div className="p-5 sm:p-6 bg-white/[0.01]">
+                      <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-3">
+                        Key Highlights:
+                      </h4>
+                      <ul className="space-y-2">
+                        {screen.highlights.map((item, hIdx) => (
+                          <li
+                            key={hIdx}
+                            className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300 leading-relaxed"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* 3. Results & Metrics (Clearly Marked Placeholders) */}
           <section className="rounded-2xl border border-indigo-500/30 bg-indigo-950/20 p-6 sm:p-8">
